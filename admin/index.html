@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración | TechPro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .admin-body {
+            background: var(--bg-dark);
+            min-height: 100vh;
+        }
+        .admin-header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: calc(100vh - 80px);
+        }
+        .admin-sidebar {
+            background: var(--bg-card);
+            border-right: 1px solid var(--border);
+            padding: 2rem;
+        }
+        .admin-nav {
+            list-style: none;
+        }
+        .admin-nav li {
+            margin-bottom: 0.5rem;
+        }
+        .admin-nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        .admin-nav a:hover,
+        .admin-nav a.active {
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+        }
+        .admin-nav a.active {
+            border-left: 3px solid var(--accent);
+        }
+        .admin-content {
+            padding: 2rem;
+        }
+        .admin-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .admin-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+        }
+        .table-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .table-title {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .search-input {
+            padding: 0.5rem 1rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            width: 250px;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--bg-elevated);
+        }
+        td {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        tr:hover td {
+            background: var(--bg-elevated);
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+        }
+        .badge-new {
+            background: rgba(0, 255, 136, 0.1);
+            color: #00FF88;
+        }
+        .badge-contacted {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--primary);
+        }
+        .action-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+        .action-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .login-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 10, 15, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .login-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .login-subtitle {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .hidden {
+            display: none !important;
+        }
+        @media (max-width: 860px) {
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+            .admin-sidebar {
+                display: none;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .search-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="admin-body">
+    <!-- Login Overlay -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">TECH</span>
+                <span class="logo-accent">PRO</span>
+                <span class="logo-bracket">]</span>
+            </div>
+            <h1 class="login-title">PANEL ADMIN</h1>
+            <p class="login-subtitle">Ingresa tus credenciales para continuar</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Usuario</label>
+                    <input type="text" class="form-input" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-input" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    ACCEDER
+                </button>
+                <p id="loginError" style="color: var(--accent); text-align: center; margin-top: 1rem; display: none;">
+                    Credenciales incorrectas
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="hidden">
+        <header class="admin-header">
+            <div class="admin-container">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="../index.html" class="logo">
+                        <span class="logo-bracket">[</span>
+                        <span class="logo-text">TECH</span>
+                        <span class="logo-accent">PRO</span>
+                        <span class="logo-bracket">]</span>
+                    </a>
+                    <button class="action-btn" onclick="logout()">Cerrar Sesión</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-grid">
+            <aside class="admin-sidebar">
+                <ul class="admin-nav">
+                    <li><a href="#" class="active">📋 Clientes</a></li>
+                    <li><a href="#">📊 Estadísticas</a></li>
+                    <li><a href="#">📧 Mensajes</a></li>
+                    <li><a href="#">⚙️ Configuración</a></li>
+                </ul>
+            </aside>
+
+            <main class="admin-content">
+                <h1 class="admin-title">CLIENTES<span class="accent"> REGISTRADOS</span></h1>
+                <p class="admin-subtitle">Gestiona los contactos del formulario web</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalClients">0</div>
+                        <div class="stat-label">TOTAL CLIENTES</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="newClients">0</div>
+                        <div class="stat-label">NUEVOS (MES)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="pendingClients">0</div>
+                        <div class="stat-label">PENDIENTES</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="contactedClients">0</div>
+                        <div class="stat-label">CONTACTADOS</div>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">ÚLTIMOS REGISTROS</h3>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Buscar cliente...">
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>EMAIL</th>
+                                <th>TELÉFONO</th>
+                                <th>ESTADO</th>
+                                <th>FECHA</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientsTable">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Demo data - replace with API call to your backend
+        const demoClients = [
+            { id: 1, nombres: 'JUAN PÉREZ', apellidos: 'GARCÍA', correo: 'juan@ejemplo.com', telefono: '3112241800', mensaje: 'Necesito una página web', estado: 'nuevo', fecha: '2025-04-20' },
+            { id: 2, nombres: 'MARÍA LÓPEZ', apellidos: 'SÁNCHEZ', correo: 'maria@empresa.co', telefono: '3001234567', mensaje: 'Consultoría IA', estado: 'contactado', fecha: '2025-04-19' },
+            { id: 3, nombres: 'CARLOS RUIZ', apellidos: 'MARTÍNEZ', correo: 'carlos@test.com', telefono: '3159876543', mensaje: 'Desarrollo app', estado: 'nuevo', fecha: '2025-04-18' },
+        ];
+
+        // Login functionality
+        const loginForm = document.getElementById('loginForm');
+        const loginOverlay = document.getElementById('loginOverlay');
+        const adminPanel = document.getElementById('adminPanel');
+        const loginError = document.getElementById('loginError');
+
+        // Simple auth - in production, use proper backend authentication
+        const ADMIN_USER = 'admin';
+        const ADMIN_PASS = 'TechPro2025!';
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === ADMIN_USER && password === ADMIN_PASS) {
+                localStorage.setItem('adminLoggedIn', 'true');
+                showAdminPanel();
+            } else {
+                loginError.style.display = 'block';
+            }
+        });
+
+        function showAdminPanel() {
+            loginOverlay.classList.add('hidden');
+            adminPanel.classList.remove('hidden');
+            loadClients();
+        }
+
+        function logout() {
+            localStorage.removeItem('adminLoggedIn');
+            loginOverlay.classList.remove('hidden');
+            adminPanel.classList.add('hidden');
+            loginForm.reset();
+            loginError.style.display = 'none';
+        }
+
+        // Check if already logged in
+        if (localStorage.getItem('adminLoggedIn') === 'true') {
+            showAdminPanel();
+        }
+
+        // Load and display clients
+        function loadClients() {
+            const tbody = document.getElementById('clientsTable');
+            tbody.innerHTML = demoClients.map(client => `
+                <tr>
+                    <td>#${client.id}</td>
+                    <td>${client.nombres} ${client.apellidos}</td>
+                    <td>${client.correo}</td>
+                    <td>${client.telefono}</td>
+                    <td><span class="badge ${client.estado === 'nuevo' ? 'badge-new' : 'badge-contacted'}">${client.estado.toUpperCase()}</span></td>
+                    <td>${client.fecha}</td>
+                    <td><button class="action-btn" onclick="viewClient(${client.id})">Ver</button></td>
+                </tr>
+            `).join('');
+
+            // Update stats
+            document.getElementById('totalClients').textContent = demoClients.length;
+            document.getElementById('newClients').textContent = demoClients.filter(c => c.estado === 'nuevo').length;
+            document.getElementById('pendingClients').textContent = demoClients.filter(c => c.estado === 'nuevo').length;
+            document.getElementById('contactedClients').textContent = demoClients.filter(c => c.estado === 'contactado').length;
+        }
+
+        function viewClient(id) {
+            const client = demoClients.find(c => c.id === id);
+            if (client) {
+                alert(`Cliente: ${client.nombres} ${client.apellidos}\nEmail: ${client.correo}\nTel: ${client.telefono}\n\nMensaje:\n${client.mensaje}`);
+            }
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const search = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('#clientsTable tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(search) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
