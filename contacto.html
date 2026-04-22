@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | AC-Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-hero {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #101a30 100%);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .contact-info {
+            padding-right: 2rem;
+        }
+        .contact-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+        .contact-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--primary);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+        .contact-value {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        .contact-form-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 3rem;
+            position: relative;
+        }
+        .contact-form-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .contact-form-wrapper:focus-within::before {
+            opacity: 0.5;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+        textarea.form-input {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-status {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .form-status.success {
+            display: block;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00FF88;
+            color: #00FF88;
+        }
+        .form-status.error {
+            display: block;
+            background: rgba(204, 85, 0, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 9999;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp-float svg {
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(0 4px 8px rgba(37, 211, 102, 0.4));
+        }
+        .whatsapp-float:hover svg {
+            filter: drop-shadow(0 6px 12px rgba(37, 211, 102, 0.6));
+        }
+        @media (max-width: 860px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-wrapper {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">AC</span>
+                <span class="logo-accent">-CONSULTING</span>
+                <span class="logo-bracket">]</span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">INICIO</a></li>
+                    <li><a href="index.html#servicios" class="nav-link">SERVICIOS</a></li>
+                    <li><a href="index.html#quien-soy" class="nav-link">QUIEN SOY</a></li>
+                    <li><a href="index.html#blog" class="nav-link">BLOG</a></li>
+                    <li><a href="contacto.html" class="nav-link nav-link-cta active">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container">
+            <span class="section-label">[ CONTACTO ]</span>
+            <h1 class="section-title">HABLEMOS DE TU <span class="accent">PROYECTO</span></h1>
+        </div>
+    </section>
+
+    <section class="services" style="padding-top: 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-label">EMAIL</div>
+                        <div class="contact-value">hola@techpro.agency</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">UBICACIÓN</div>
+                        <div class="contact-value">Remoto / Latinoamérica</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">RESPUESTA</div>
+                        <div class="contact-value">24-48 horas hábiles</div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 2rem;">ENVÍANOS UN MENSAJE</h2>
+
+                    <form id="contactForm">
+                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Nombres *</label>
+                                <input type="text" name="nombres" class="form-input" required
+                                       oninput="this.value = this.value.toUpperCase()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Apellidos *</label>
+                                <input type="text" name="apellidos" class="form-input" required
+                                       oninput="this.value = this.value.toUpperCase()">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Correo electrónico *</label>
+                            <input type="email" name="correo" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Teléfono * (Llave única)</label>
+                            <input type="tel" name="telefono" class="form-input" required
+                                   placeholder="Ej: +57 300 123 4567">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Mensaje</label>
+                            <textarea name="mensaje" class="form-input" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span>ENVIAR MENSAJE</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/3112241803" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="15" fill="#25D366"/>
+            <path d="M16 7c-4.97 0-9 4.03-9 9 0 1.59.42 3.07 1.15 4.36L7 25l4.79-1.26A8.945 8.945 0 0016 25c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.47 12.38c-.2.56-1.1 1.03-1.52 1.1-.4.07-.78.2-2.6-.54-2.2-.87-3.6-3.06-3.71-3.2-.1-.14-.89-1.18-.89-2.25 0-1.07.56-1.6.76-1.82.2-.21.53-.31.85-.31.1 0 .2 0 .3.01.35.02.52.04.75.58.28.64.95 2.23 1.03 2.4.08.16.13.35.03.56-.1.2-.15.33-.3.52-.15.18-.3.38-.43.5-.14.14-.28.29-.12.56.15.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.58-.07.16-.18.67-.78.85-1.05.18-.27.36-.22.6-.13.24.08 1.53.72 1.79.85.26.13.43.2.5.31.06.11.04.64-.16 1.2z" fill="white"/>
+        </svg>
+    </a>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p>&copy; 2025 TechPro. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Form handling - Conexión a API real
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+
+            // Validation
+            if (!data.correo.includes('@')) {
+                formStatus.textContent = 'Por favor ingresa un correo válido';
+                formStatus.className = 'form-status error';
+                formStatus.style.display = 'block';
+                return;
+            }
+
+            try {
+                formStatus.textContent = 'Enviando...';
+                formStatus.className = 'form-status';
+                formStatus.style.display = 'block';
+
+                // Enviar a la API
+                const response = await fetch('/api/save_contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    formStatus.textContent = '¡Mensaje enviado exitosamente! Redirigiendo...';
+                    formStatus.className = 'form-status success';
+                    contactForm.reset();
+
+                    // Redirect to home after success
+                    setTimeout(() => {
+                        window.location.href = 'index.html#inicio';
+                    }, 1500);
+                } else {
+                    formStatus.textContent = result.error || 'Error al enviar. Intenta de nuevo.';
+                    formStatus.className = 'form-status error';
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                formStatus.textContent = 'Error de conexión. Verifica tu internet.';
+                formStatus.className = 'form-status error';
+            }
+        });
+    </script>
+</body>
+</html>
