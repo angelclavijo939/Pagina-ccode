@@ -1,14 +1,13 @@
 {
   "version": 2,
-  "name": "techpro-website",
   "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
     {
       "src": "api/**/*.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "**/*.{html,css,js}",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
