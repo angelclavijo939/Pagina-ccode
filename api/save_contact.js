@@ -1,15 +1,10 @@
-// API Endpoint para guardar contactos en PostgreSQL
-// Compatible con Vercel Serverless Functions y Neon PostgreSQL
-
 import { Pool } from '@neondatabase/serverless';
 
-// Configuración de la base de datos
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DB_URL,
 });
 
 export default async function handler(req, res) {
-  // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -25,19 +20,16 @@ export default async function handler(req, res) {
   try {
     const { nombres, apellidos, correo, telefono, mensaje } = req.body;
 
-    // Validaciones
     if (!nombres || !apellidos || !correo || !telefono) {
       return res.status(400).json({
         error: 'Faltan campos requeridos: nombres, apellidos, correo, telefono'
       });
     }
 
-    // Validar email
     if (!correo.includes('@')) {
       return res.status(400).json({ error: 'Correo electrónico inválido' });
     }
 
-    // Verificar si el teléfono ya existe (llave única)
     const checkQuery = 'SELECT id FROM clientes_web WHERE telefono = $1';
     const checkResult = await pool.query(checkQuery, [telefono]);
 
@@ -47,7 +39,6 @@ export default async function handler(req, res) {
       });
     }
 
-    // Insertar nuevo cliente
     const insertQuery = `
       INSERT INTO clientes_web (nombres, apellidos, correo, telefono, mensaje)
       VALUES ($1, $2, $3, $4, $5)
@@ -62,7 +53,6 @@ export default async function handler(req, res) {
       mensaje || ''
     ]);
 
-    // Enviar notificación por email (opcional - configurar con SendGrid/AWS SES)
     await sendNotificationEmail(result.rows[0]);
 
     return res.status(201).json({
@@ -80,23 +70,16 @@ export default async function handler(req, res) {
   }
 }
 
-// Función para enviar notificación por email
 async function sendNotificationEmail(cliente) {
-  // Configurar con tu servicio de email preferido
-  // Ejemplo con nodemailer o API de SendGrid
   const emailData = {
     to: 'angel.clavijo@yahoo.es',
     subject: 'Nuevo Registro de Cliente - TechPro',
     body: `
-      Se ha registrado un nuevo cliente:
-
       Nombre: ${cliente.nombres} ${cliente.apellidos}
       Email: ${cliente.correo}
       Teléfono: ${cliente.telefono}
       Fecha: ${cliente.fecha_registro}
     `
   };
-
-  // Aquí implementarías el envío real
   console.log('Notificación email:', emailData);
 }
