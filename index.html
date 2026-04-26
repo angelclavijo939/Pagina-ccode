@@ -1,370 +1,600 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AC-Consulting — Proyectos · Marketing Digital · IA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformamos Ideas en Realidad | AC-Consulting</title>
 
-  <!-- SEO básico -->
-  <meta name="description" content="AC-Consulting: proyectos digitales, marketing digital e inteligencia artificial para impulsar tu negocio. +10 años de experiencia en tecnología." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://ac-consulting.cloud/" />
+    <!-- SEO básico -->
+    <meta name="description" content="AC-Consulting: agencia digital premium especializada en desarrollo web, inteligencia artificial y marketing digital. +8 años transformando ideas en soluciones digitales." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ac-consulting.cloud/" />
 
-  <!-- Open Graph (WhatsApp, LinkedIn, redes sociales) -->
-  <meta property="og:title" content="AC-Consulting — Proyectos · Marketing Digital · IA" />
-  <meta property="og:description" content="Transformamos ideas en proyectos digitales, marketing y soluciones de IA que impulsan tu negocio." />
-  <meta property="og:url" content="https://ac-consulting.cloud/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_CO" />
+    <!-- Open Graph (LinkedIn, WhatsApp, redes sociales) -->
+    <meta property="og:title" content="Transformamos Ideas en Realidad | AC-Consulting" />
+    <meta property="og:description" content="Agencia digital premium: desarrollo web, IA y marketing digital sin límites. Soluciones tecnológicas de élite para tu negocio." />
+    <meta property="og:url" content="https://ac-consulting.cloud/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
 
-  <!-- Schema.org (datos estructurados) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "AC-Consulting",
-    "url": "https://ac-consulting.cloud",
-    "description": "Proyectos digitales, marketing digital e inteligencia artificial",
-    "founder": "Ángel Clavijo",
-    "areaServed": ["Colombia", "Latinoamérica", "Estados Unidos"],
-    "serviceType": ["Diseño Web", "Desarrollo de Software", "Marketing Digital", "Inteligencia Artificial"]
-  }
-  </script>
+    <!-- Schema.org (datos estructurados) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "AC-Consulting",
+      "url": "https://ac-consulting.cloud",
+      "description": "Agencia digital premium especializada en desarrollo web, inteligencia artificial y marketing digital",
+      "areaServed": ["Colombia", "Latinoamérica", "Estados Unidos"],
+      "serviceType": ["Diseño Web", "Desarrollo de Software", "Marketing Digital", "Inteligencia Artificial", "Consultoría de Negocios"]
+    }
+    </script>
 
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">A</span><span class="logo-text">C-Consulting</span>
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="nav">
-        <a href="index.html" class="nav-link active">Inicio</a>
-        <a href="#servicios" class="nav-link scroll-link">Servicios</a>
-        <a href="#quien-soy" class="nav-link scroll-link">Quién soy</a>
-        <a href="#blog" class="nav-link scroll-link">Blog</a>
-        <a href="contacto.html" class="nav-link nav-cta">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="orbital">
-      <div class="orbit orbit-1"><div class="dot"></div></div>
-      <div class="orbit orbit-2"><div class="dot"></div></div>
-      <div class="orbit orbit-3"><div class="dot"></div></div>
-      <div class="nucleus"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Tecnología · Creatividad · Resultados</p>
-      <h1 class="hero-title">
-        Transformamos ideas en:<br>
-        <span class="hero-word" id="heroWord">Proyectos</span>
-      </h1>
-      <p class="hero-sub">Somos una empresa de tecnología especializada en proyectos digitales, marketing y soluciones de inteligencia artificial que impulsan tu negocio.</p>
-      <div class="hero-actions">
-        <a href="contacto.html" class="btn btn-primary">Comienza ahora</a>
-        <a href="#servicios" class="btn btn-ghost scroll-link">Ver servicios</a>
-      </div>
-    </div>
-    <!-- TECH BAR -->
-    <div class="tech-bar">
-      <div class="tech-track" id="techTrack">
-        <span>React</span><span>Next.js</span><span>Python</span><span>OpenAI</span>
-        <span>Claude Code</span><span>GitHub</span><span>Oracle</span><span>Linux</span>
-        <span>JavaScript</span><span>TypeScript</span><span>Node.js</span><span>Docker</span>
-        <span>PostgreSQL</span><span>OpenCode</span><span>Figma</span><span>TailwindCSS</span>
-        <span>Vue</span><span>FastAPI</span><span>Vercel</span><span>AWS</span>
-        <span>Anthropic</span><span>Kubernetes</span>
-        <!-- Duplicado para loop -->
-        <span>React</span><span>Next.js</span><span>Python</span><span>OpenAI</span>
-        <span>Claude Code</span><span>GitHub</span><span>Oracle</span><span>Linux</span>
-        <span>JavaScript</span><span>TypeScript</span><span>Node.js</span><span>Docker</span>
-        <span>PostgreSQL</span><span>OpenCode</span><span>Figma</span><span>TailwindCSS</span>
-        <span>Vue</span><span>FastAPI</span><span>Vercel</span><span>AWS</span>
-        <span>Anthropic</span><span>Kubernetes</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section class="servicios-section" id="servicios">
-    <div class="container">
-      <p class="section-label">Lo que hacemos</p>
-      <h2 class="section-title">Nuestros <em>Servicios</em></h2>
-      <div class="servicios-grid">
-        <a href="servicios/diseno-web.html" class="servicio-btn">
-          <div class="servicio-icon">⬡</div>
-          <span>Diseño Web</span>
-        </a>
-        <a href="servicios/desarrollo-software.html" class="servicio-btn">
-          <div class="servicio-icon">⟨/⟩</div>
-          <span>Desarrollo de Software</span>
-        </a>
-        <a href="servicios/escritura-traduccion.html" class="servicio-btn">
-          <div class="servicio-icon">✦</div>
-          <span>Escritura y Traducción</span>
-        </a>
-        <a href="servicios/marketing-digital.html" class="servicio-btn">
-          <div class="servicio-icon">◈</div>
-          <span>Marketing Digital</span>
-        </a>
-        <a href="servicios/servicios-ia.html" class="servicio-btn">
-          <div class="servicio-icon">◎</div>
-          <span>Servicios de IA</span>
-        </a>
-        <a href="servicios/negocios.html" class="servicio-btn">
-          <div class="servicio-icon">◆</div>
-          <span>Negocios</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUIEN SOY -->
-  <section class="quien-soy" id="quien-soy">
-    <div class="container">
-      <div class="quien-grid">
-        <div class="quien-img-wrap reveal">
-          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop" alt="Ángel Clavijo" loading="lazy" />
-          <div class="img-badge">+10 años de experiencia</div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">AC</span>
+                <span class="logo-accent">-CONSULTING</span>
+                <span class="logo-bracket">]</span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">INICIO</a></li>
+                    <li><a href="#servicios" class="nav-link">SERVICIOS</a></li>
+                    <li><a href="#quien-soy" class="nav-link">QUIEN SOY</a></li>
+                    <li><a href="#blog" class="nav-link">BLOG</a></li>
+                    <li><a href="#contacto" class="nav-link nav-link-cta">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <div class="quien-text reveal">
-          <p class="section-label">Sobre mí</p>
-          <h2 class="section-title">Quién <em>soy</em></h2>
-          <p>Soy un profesional apasionado por la tecnología con más de una década de experiencia construyendo soluciones digitales de alto impacto. Trabajo en la intersección del diseño, el desarrollo y la inteligencia artificial para crear experiencias que convierten y transforman negocios.</p>
-          <p>Mi enfoque es simple: entender tu visión, aplicar las mejores tecnologías y entregar resultados medibles. Cada proyecto es una oportunidad de superar expectativas.</p>
-          <a href="contacto.html" class="btn btn-primary">Hablemos de tu proyecto</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- TESTIMONIOS -->
-  <section class="testimonios" id="testimonios">
-    <div class="container">
-      <p class="section-label">Lo que dicen</p>
-      <h2 class="section-title">Clientes <em>satisfechos</em></h2>
-      <div class="testimonios-grid">
-        <div class="testimonio-card reveal">
-          <div class="testimonio-stars">★★★★★</div>
-          <p>"AC-Consulting transformó completamente nuestra presencia digital. En 3 meses duplicamos el tráfico orgánico y las conversiones aumentaron un 180%. Un trabajo excepcional."</p>
-          <div class="testimonio-author">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop" alt="María González" />
-            <div>
-              <strong>María González</strong>
-              <span>CEO, FinTech Solutions</span>
+    <!-- Hero Section - Full Height -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1920&auto=format&fit=crop" alt="Background" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-main">
+            <div class="container hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    AGENCIA DIGITAL PREMIUM
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-static">TRANSFORMAMOS</span><br>
+                    <span class="title-static">IDEAS EN</span><br>
+                    <span class="title-dynamic" id="dynamicText">PROYECTOS</span>
+                </h1>
+                <p class="hero-description">
+                    Soluciones tecnológicas de élite que impulsan tu negocio al siguiente nivel.
+                    Desarrollo, IA y marketing digital sin límites.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn btn-primary">
+                        <span>INICIAR PROYECTO</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#servicios" class="btn btn-secondary">VER SERVICIOS</a>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="testimonio-card reveal">
-          <div class="testimonio-stars">★★★★★</div>
-          <p>"La implementación del chatbot de IA redujo el tiempo de atención al cliente en un 70%. El equipo de AC-Consulting entiende perfectamente las necesidades del negocio."</p>
-          <div class="testimonio-author">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Carlos Méndez" />
-            <div>
-              <strong>Carlos Méndez</strong>
-              <span>Director, Retail Group</span>
+
+        <!-- Tech Stack Bar -->
+        <div class="tech-bar">
+            <div class="tech-bar-shine"></div>
+            <div class="tech-track" id="techTrack">
+                <div class="tech-item"><span class="tech-icon">⚛️</span> React</div>
+                <div class="tech-item"><span class="tech-icon">🐍</span> Python</div>
+                <div class="tech-item"><span class="tech-icon">🤖</span> OpenAI</div>
+                <div class="tech-item"><span class="tech-icon">🗄️</span> Oracle</div>
+                <div class="tech-item"><span class="tech-icon">🐧</span> Linux</div>
+                <div class="tech-item"><span class="tech-icon">▲</span> Next.js</div>
+                <div class="tech-item"><span class="tech-icon">◆</span> Claude</div>
+                <div class="tech-item"><span class="tech-icon">⬢</span> GitHub</div>
+                <div class="tech-item"><span class="tech-icon">📘</span> TypeScript</div>
+                <div class="tech-item"><span class="tech-icon">🎨</span> Figma</div>
+                <div class="tech-item"><span class="tech-icon">☁️</span> AWS</div>
+                <div class="tech-item"><span class="tech-icon">🐳</span> Docker</div>
+                <div class="tech-item"><span class="tech-icon">📊</span> PostgreSQL</div>
+                <div class="tech-item"><span class="tech-icon">⚡</span> Vercel</div>
+                <div class="tech-item"><span class="tech-icon">🔷</span> Node.js</div>
+                <div class="tech-item"><span class="tech-icon">🎯</span> Redis</div>
+                <div class="tech-item"><span class="tech-icon">🔍</span> Elastic</div>
+                <div class="tech-item"><span class="tech-icon">📱</span> Flutter</div>
+                <div class="tech-item"><span class="tech-icon">🛡️</span> Auth0</div>
+                <div class="tech-item"><span class="tech-icon">📈</span> TensorFlow</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="tech-item"><span class="tech-icon">⚛️</span> React</div>
+                <div class="tech-item"><span class="tech-icon">🐍</span> Python</div>
+                <div class="tech-item"><span class="tech-icon">🤖</span> OpenAI</div>
+                <div class="tech-item"><span class="tech-icon">🗄️</span> Oracle</div>
+                <div class="tech-item"><span class="tech-icon">🐧</span> Linux</div>
+                <div class="tech-item"><span class="tech-icon">▲</span> Next.js</div>
+                <div class="tech-item"><span class="tech-icon">◆</span> Claude</div>
+                <div class="tech-item"><span class="tech-icon">⬢</span> GitHub</div>
+                <div class="tech-item"><span class="tech-icon">📘</span> TypeScript</div>
+                <div class="tech-item"><span class="tech-icon">🎨</span> Figma</div>
             </div>
-          </div>
         </div>
-        <div class="testimonio-card reveal">
-          <div class="testimonio-stars">★★★★★</div>
-          <p>"Trabajar con AC-Consulting fue una experiencia increíble. Entregaron el proyecto antes del plazo, con calidad superior y un soporte post-lanzamiento impecable."</p>
-          <div class="testimonio-author">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" alt="Laura Restrepo" />
-            <div>
-              <strong>Laura Restrepo</strong>
-              <span>Fundadora, EduTech CO</span>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">[ NUESTROS SERVICIOS ]</span>
+                <h2 class="section-title">EXPERTISE <span class="accent">MULTIDISCIPLINARIO</span></h2>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- POR QUÉ ELEGIRNOS -->
-  <section class="porque">
-    <div class="container">
-      <p class="section-label light">Nuestra diferencia</p>
-      <h2 class="section-title light">Por qué <em>elegirnos</em></h2>
-      <div class="porque-grid">
-        <div class="porque-card reveal">
-          <div class="porque-num">10+</div>
-          <h3>Años de experiencia</h3>
-          <p>Más de una década construyendo soluciones tecnológicas de alto impacto para empresas de todos los tamaños.</p>
-        </div>
-        <div class="porque-card reveal">
-          <div class="porque-num">200+</div>
-          <h3>Proyectos entregados</h3>
-          <p>Cada proyecto es único. Nos enorgullece un portafolio diverso y resultados demostrables en cada entrega.</p>
-        </div>
-        <div class="porque-card reveal">
-          <div class="porque-num">99.9%</div>
-          <h3>Uptime garantizado</h3>
-          <p>Infraestructura robusta y monitoreo continuo para que tu plataforma esté siempre disponible.</p>
-        </div>
-        <div class="porque-card reveal">
-          <div class="porque-num">24/7</div>
-          <h3>Soporte continuo</h3>
-          <p>Estamos disponibles cuando nos necesitas. Soporte técnico y acompañamiento permanente post-lanzamiento.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section class="blog" id="blog">
-    <div class="container">
-      <p class="section-label">Últimos artículos</p>
-      <h2 class="section-title">Nuestro <em>Blog</em></h2>
-      <div class="blog-grid">
-        <article class="blog-card reveal">
-          <div class="blog-img">
-            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=600&auto=format&fit=crop" alt="IA en 2025" loading="lazy" />
-          </div>
-          <div class="blog-body">
-            <h3>El futuro de la IA generativa en los negocios de 2025</h3>
-            <div class="blog-meta">
-              <span class="blog-author">Por Ángel Clavijo</span>
-              <button class="like-btn" data-id="1">
-                <span class="like-icon">♥</span>
-                <span class="like-count">47</span>
-              </button>
+            <div class="services-grid">
+                <a href="servicios/diseno-web.html" class="service-card" data-service="design">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="8" y="8" width="48" height="48" rx="4"/>
+                            <path d="M8 20h48M20 20v36"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">DISEÑO WEB</h3>
+                    <p class="service-desc">Interfaces que cautivan y convierten</p>
+                    <div class="service-arrow">→</div>
+                    <div class="service-glow"></div>
+                </a>
+                <a href="servicios/desarrollo-software.html" class="service-card" data-service="dev">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 24l-8 8 8 8M44 24l8 8-8 8M36 16l-8 32"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">DESARROLLO</h3>
+                    <p class="service-desc">Código robusto y escalable</p>
+                    <div class="service-arrow">→</div>
+                    <div class="service-glow"></div>
+                </a>
+                <a href="servicios/escritura-traduccion.html" class="service-card" data-service="content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 16h40v8H12zM12 32h28v8H12zM12 48h20v8H12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">CONTENIDO</h3>
+                    <p class="service-desc">Transcripción y traducción profesional</p>
+                    <div class="service-arrow">→</div>
+                    <div class="service-glow"></div>
+                </a>
+                <a href="servicios/marketing-digital.html" class="service-card" data-service="marketing">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="32" cy="32" r="20"/>
+                            <path d="M32 12v8M32 44v8M12 32h8M44 32h8"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">MARKETING</h3>
+                    <p class="service-desc">SEO, redes y conversión</p>
+                    <div class="service-arrow">→</div>
+                    <div class="service-glow"></div>
+                </a>
+                <a href="servicios/servicios-ia.html" class="service-card" data-service="ai">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M32 8v48M8 32h48" stroke-dasharray="4 4"/>
+                            <circle cx="32" cy="32" r="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">IA & AUTOMACIÓN</h3>
+                    <p class="service-desc">Inteligencia artificial a tu servicio</p>
+                    <div class="service-arrow">→</div>
+                    <div class="service-glow"></div>
+                </a>
+                <a href="servicios/negocios.html" class="service-card" data-service="business">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 56V24l10-8 10 8 10-8 10 8v32H16z"/>
+                            <path d="M24 56V40h8v16M40 56V36h8v20"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">NEGOCIOS</h3>
+                    <p class="service-desc">Consultoría y gestión estratégica</p>
+                    <div class="service-arrow">→</div>
+                    <div class="service-glow"></div>
+                </a>
             </div>
-          </div>
-        </article>
-        <article class="blog-card reveal">
-          <div class="blog-img">
-            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=600&auto=format&fit=crop" alt="SEO técnico" loading="lazy" />
-          </div>
-          <div class="blog-body">
-            <h3>SEO técnico: cómo triplicar el tráfico orgánico en 90 días</h3>
-            <div class="blog-meta">
-              <span class="blog-author">Por Ángel Clavijo</span>
-              <button class="like-btn" data-id="2">
-                <span class="like-icon">♥</span>
-                <span class="like-count">83</span>
-              </button>
+        </div>
+    </section>
+
+    <!-- Snap Container - Secciones con scroll-snap -->
+    <div class="snap-container">
+
+    <!-- About Section -->
+    <section class="about" id="quien-soy">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop" alt="Professional workspace" class="about-image">
+                        <div class="about-frame"></div>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">150+</span>
+                                <span class="stat-label">PROYECTOS</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">8+</span>
+                                <span class="stat-label">AÑOS EXP.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-label">[ QUIÉN SOY ]</span>
+                    <h2 class="about-title">ARQUITECTO DIGITAL <span class="accent">APASIONADO</span></h2>
+                    <p class="about-text">
+                        Soy un desarrollador full-stack y especialista en IA con más de 8 años transformando
+                        ideas complejas en soluciones digitales elegantes. Mi enfoque combina
+                        <strong>tecnología de vanguardia</strong> con <strong>diseño estratégico</strong> para
+                        crear experiencias que no solo se ven bien, sino que generan resultados medibles.
+                    </p>
+                    <p class="about-text">
+                        Desde startups disruptivas hasta corporaciones establecidas, he ayudado a
+                        empresas de todos los tamaños a <span class="highlight">escalar su presencia digital</span>
+                        y <span class="highlight">automatizar procesos</span> mediante inteligencia artificial.
+                    </p>
+                    <a href="#contacto" class="btn btn-primary">
+                        <span>TRABAJEMOS JUNTOS</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
-          </div>
-        </article>
-        <article class="blog-card reveal">
-          <div class="blog-img">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Automatización" loading="lazy" />
-          </div>
-          <div class="blog-body">
-            <h3>Automatización inteligente: ahorra 20 horas semanales en tu empresa</h3>
-            <div class="blog-meta">
-              <span class="blog-author">Por Ángel Clavijo</span>
-              <button class="like-btn" data-id="3">
-                <span class="like-icon">♥</span>
-                <span class="like-count">61</span>
-              </button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">[ TESTIMONIOS ]</span>
+                <h2 class="section-title">CLIENTES QUE <span class="accent">CONFÍAN</span></h2>
             </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        La implementación de IA redujo nuestros tiempos de atención al cliente en un 70%.
+                        Un trabajo excepcional que superó todas nuestras expectativas.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Cliente" class="author-avatar">
+                        <div class="author-info">
+                            <span class="author-name">Carlos Mendoza</span>
+                            <span class="author-role">CEO, TechStart México</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        El rediseño de nuestra plataforma aumentó las conversiones un 340%.
+                        Profesionalismo, creatividad y resultados tangibles desde el día uno.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Cliente" class="author-avatar">
+                        <div class="author-info">
+                            <span class="author-name">Ana Lucía Vargas</span>
+                            <span class="author-role">Directora de Marketing, InnovaCorp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Su expertise en PL/SQL y sistemas legacy nos salvó de un desastre.
+                        Migración impecable y soporte continuo de primera.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop" alt="Cliente" class="author-avatar">
+                        <div class="author-info">
+                            <span class="author-name">Roberto Sánchez</span>
+                            <span class="author-role">CTO, Financiera del Norte</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <p class="section-label">Resolvemos tus dudas</p>
-      <h2 class="section-title">Preguntas <em>frecuentes</em></h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q">¿Cuánto tiempo tarda en desarrollarse un proyecto web? <span>+</span></button>
-          <div class="faq-a"><p>Depende de la complejidad. Un sitio corporativo tarda entre 2-4 semanas. Proyectos con integraciones de IA o e-commerce pueden tomar de 6-12 semanas. Siempre entregamos cronogramas detallados antes de comenzar.</p></div>
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">[ VENTAJAS ]</span>
+                <h2 class="section-title">POR QUÉ <span class="accent">ELEGIRNOS</span></h2>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-number">01</div>
+                    <h3 class="advantage-title">ENTREGA RÁPIDA</h3>
+                    <p class="advantage-desc">Metodologías ágiles que garantizan resultados en tiempo récord sin sacrificar calidad.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-number">02</div>
+                    <h3 class="advantage-title">TECNOLOGÍA ÉLITE</h3>
+                    <p class="advantage-desc">Stack moderno con React, Python, IA avanzada y arquitecturas cloud-native.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-number">03</div>
+                    <h3 class="advantage-title">SOPORTE 24/7</h3>
+                    <p class="advantage-desc">Acompañamiento continuo y respuesta inmediata ante cualquier necesidad.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-number">04</div>
+                    <h3 class="advantage-title">RESULTADOS GARANTIZADOS</h3>
+                    <p class="advantage-desc">Compromiso medible: si no cumplimos, no pagas. Así de simple.</p>
+                </div>
+            </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Trabajan con empresas fuera de Colombia? <span>+</span></button>
-          <div class="faq-a"><p>Sí, trabajamos con clientes en toda Latinoamérica, Estados Unidos y Europa. Nuestro equipo opera de forma 100% remota con herramientas de colaboración en tiempo real.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Qué tecnologías de IA utilizan? <span>+</span></button>
-          <div class="faq-a"><p>Trabajamos con OpenAI (GPT-4), Anthropic (Claude), modelos open-source como LLaMA, y frameworks como LangChain y LlamaIndex. Elegimos la tecnología que mejor se adapta a cada caso de uso.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Ofrecen soporte después de la entrega del proyecto? <span>+</span></button>
-          <div class="faq-a"><p>Absolutamente. Ofrecemos planes de mantenimiento mensual que incluyen actualizaciones de seguridad, monitoreo de rendimiento y soporte técnico. También respondemos emergencias 24/7.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Cómo manejan la confidencialidad del proyecto? <span>+</span></button>
-          <div class="faq-a"><p>Firmamos acuerdos de confidencialidad (NDA) antes de comenzar cualquier proyecto. Tu información, código fuente y datos de negocio están protegidos en todo momento.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Cuáles son las formas de pago? <span>+</span></button>
-          <div class="faq-a"><p>Aceptamos transferencias bancarias, pagos con tarjeta de crédito/débito y plataformas como PayPal y Wise. Los proyectos se dividen en hitos: 50% al inicio y 50% a la entrega.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo logo-footer">
-            <span class="logo-mark">A</span><span class="logo-text">C-Consulting</span>
-          </a>
-          <p>Transformamos ideas en soluciones digitales que generan resultados reales.</p>
-          <div class="footer-social">
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="Twitter">𝕏</a>
-            <a href="#" aria-label="Instagram">⊕</a>
-            <a href="https://github.com/angelclavijo939" aria-label="GitHub">⌥</a>
-          </div>
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">[ BLOG ]</span>
+                <h2 class="section-title">ÚLTIMAS <span class="accent">PUBLICACIONES</span></h2>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop" alt="AI" class="blog-image">
+                        <span class="blog-category">IA</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-author">Por TechPro Team</span>
+                            <span class="blog-likes">❤️ 128</span>
+                        </div>
+                        <h3 class="blog-title">El Futuro del Desarrollo con IA Generativa</h3>
+                        <p class="blog-excerpt">Cómo herramientas como Claude y GPT están revolucionando la forma en que construimos software...</p>
+                        <a href="#" class="blog-link">LEER MÁS →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Marketing" class="blog-image">
+                        <span class="blog-category">MARKETING</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-author">Por Ana Lucía V.</span>
+                            <span class="blog-likes">❤️ 95</span>
+                        </div>
+                        <h3 class="blog-title">SEO 2025: Estrategias que Sí Funcionan</h3>
+                        <p class="blog-excerpt">Los algoritmos cambian, pero estos principios permanecen. Guía definitiva para posicionamiento...</p>
+                        <a href="#" class="blog-link">LEER MÁS →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" alt="Code" class="blog-image">
+                        <span class="blog-category">DESARROLLO</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-author">Por Dev Team</span>
+                            <span class="blog-likes">❤️ 234</span>
+                        </div>
+                        <h3 class="blog-title">Arquitectura Limpia en Python</h3>
+                        <p class="blog-excerpt">Patrones y mejores prácticas para construir aplicaciones escalables y mantenibles...</p>
+                        <a href="#" class="blog-link">LEER MÁS →</a>
+                    </div>
+                </article>
+            </div>
         </div>
-        <div class="footer-links">
-          <h4>Enlaces rápidos</h4>
-          <a href="#">Políticas de privacidad</a>
-          <a href="#blog" class="scroll-link">Blog</a>
-          <a href="#">Soporte técnico</a>
-          <a href="contacto.html">Contacto</a>
-        </div>
-        <div class="footer-links">
-          <h4>Servicios</h4>
-          <a href="servicios/diseno-web.html">Diseño Web</a>
-          <a href="servicios/desarrollo-software.html">Desarrollo</a>
-          <a href="servicios/servicios-ia.html">Inteligencia Artificial</a>
-          <a href="servicios/marketing-digital.html">Marketing Digital</a>
-        </div>
-        <div class="footer-newsletter">
-          <h4>Newsletter</h4>
-          <p>Recibe artículos y novedades en tecnología e IA.</p>
-          <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-            <input type="email" placeholder="tu@email.com" required />
-            <button type="submit" class="btn btn-primary">Suscribir</button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 AC-Consulting. Todos los derechos reservados.</p>
-        <p>Contacto legal: <a href="mailto:angel.clavijo@yahoo.es">angel.clavijo@yahoo.es</a></p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- WhatsApp flotante -->
-  <a class="wa-float" id="waFloat" href="https://wa.me/57TUNUMERO" target="_blank" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">[ FAQ ]</span>
+                <h2 class="section-title">PREGUNTAS <span class="accent">FRECUENTES</span></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuánto tiempo toma desarrollar un proyecto web?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Depende de la complejidad. Una landing page profesional puede estar lista en 1-2 semanas, mientras que una aplicación web completa puede llevar 2-3 meses. Siempre entregamos con cronogramas claros y hitos definidos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Trabajan con empresas de cualquier tamaño?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutamente. Desde startups con presupuestos ajustados hasta corporaciones que necesitan soluciones enterprise. Adaptamos nuestros servicios a tus necesidades y escala.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Ofrecen garantía en sus servicios?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí. Todos nuestros proyectos incluyen garantía de 3 meses post-entrega para corrección de bugs. Además, ofrecemos planes de mantenimiento continuo para actualizaciones y mejoras.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo se maneja la comunicación durante el proyecto?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Usamos herramientas colaborativas como Slack, Notion y reuniones semanales de seguimiento. Tendrás acceso a un dashboard en tiempo real para ver el progreso de tu proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="scripts.js"></script>
+    </div><!-- End snap-container -->
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="footer-cta">
+            <div class="container">
+                <div class="footer-contact-wrapper">
+                    <div class="footer-contact-info">
+                        <span class="section-label">[ CONTACTO ]</span>
+                        <h2 class="cta-title">HABLEMOS DE TU <span class="accent">PROYECTO</span></h2>
+                        <div class="contact-info-item">
+                            <div class="contact-info-label">EMAIL</div>
+                            <div class="contact-info-value">hola@techpro.agency</div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-label">UBICACIÓN</div>
+                            <div class="contact-info-value">Remoto / Latinoamérica</div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-label">RESPUESTA</div>
+                            <div class="contact-info-value">24-48 horas hábiles</div>
+                        </div>
+                        <a href="https://wa.me/3112241803" class="btn btn-primary" target="_blank" style="margin-top: 1rem;">
+                            <span>ESCRÍBENOS POR WHATSAPP</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer-contact-form">
+                        <form id="footerContactForm" class="home-contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Nombres *</label>
+                                    <input type="text" name="nombres" class="form-input" required oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Apellidos *</label>
+                                    <input type="text" name="apellidos" class="form-input" required oninput="this.value = this.value.toUpperCase()">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Correo electrónico *</label>
+                                <input type="email" name="correo" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Teléfono *</label>
+                                <input type="tel" name="telefono" class="form-input" required placeholder="Ej: +57 300 123 4567">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Mensaje</label>
+                                <textarea name="mensaje" class="form-input" rows="3" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <span>ENVIAR MENSAJE</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                            <div class="form-status" id="footerFormStatus"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="footer-logo">
+                            <span class="logo-bracket">[</span>
+                            <span class="logo-text">AC</span>
+                            <span class="logo-accent">-CONSULTING</span>
+                            <span class="logo-bracket">]</span>
+                        </a>
+                        <p class="footer-description">
+                            Transformando ideas en realidad digital. Soluciones tecnológicas
+                            premium para empresas que buscan destacar.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4 class="footer-title">ENLACES RÁPIDOS</h4>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#quien-soy">Quién Soy</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4 class="footer-title">SERVICIOS</h4>
+                        <ul>
+                            <li><a href="servicios/diseno-web.html">Diseño Web</a></li>
+                            <li><a href="servicios/desarrollo-software.html">Desarrollo</a></li>
+                            <li><a href="servicios/marketing-digital.html">Marketing</a></li>
+                            <li><a href="servicios/servicios-ia.html">Inteligencia Artificial</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4 class="footer-title">NEWSLETTER</h4>
+                        <p>Recibe las últimas tendencias y tips directo a tu inbox.</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="tu@email.com" required class="newsletter-input">
+                            <button type="submit" class="newsletter-btn">→</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 AC-Consulting. Todos los derechos reservados.</p>
+                    <div class="footer-legal">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos de Servicio</a>
+                        <a href="admin/">Panel Admin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/3112241803" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="15" fill="#25D366"/>
+            <path d="M16 7c-4.97 0-9 4.03-9 9 0 1.59.42 3.07 1.15 4.36L7 25l4.79-1.26A8.945 8.945 0 0016 25c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.47 12.38c-.2.56-1.1 1.03-1.52 1.1-.4.07-.78.2-2.6-.54-2.2-.87-3.6-3.06-3.71-3.2-.1-.14-.89-1.18-.89-2.25 0-1.07.56-1.6.76-1.82.2-.21.53-.31.85-.31.1 0 .2 0 .3.01.35.02.52.04.75.58.28.64.95 2.23 1.03 2.4.08.16.13.35.03.56-.1.2-.15.33-.3.52-.15.18-.3.38-.43.5-.14.14-.28.29-.12.56.15.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.58-.07.16-.18.67-.78.85-1.05.18-.27.36-.22.6-.13.24.08 1.53.72 1.79.85.26.13.43.2.5.31.06.11.04.64-.16 1.2z" fill="white"/>
+        </svg>
+    </a>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
