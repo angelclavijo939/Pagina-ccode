@@ -1,161 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Digital | TechPro</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        .service-hero {
-            padding: 10rem 0 6rem;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #301a10 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .service-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-            opacity: 0.15;
-            filter: blur(100px);
-        }
-        .service-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .subservices-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        .subservice-card {
-            padding: 2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-        .subservice-card:hover {
-            border-color: var(--accent);
-            transform: translateX(10px);
-        }
-        .subservice-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-        .subservice-desc {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 2rem;
-            transition: var(--transition);
-        }
-        .back-link:hover {
-            color: var(--accent);
-        }
-        @media (max-width: 860px) {
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Digital, SEO y Redes Sociales en Colombia | AC-Consulting</title>
+  <meta name="description" content="Posicionamiento SEO, gestión de redes sociales y campañas SEM. Estrategias de marketing digital basadas en datos para crecer en Colombia. AC-Consulting." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ac-consulting.net/servicios/marketing-digital.html" />
+  <meta property="og:title" content="Marketing Digital, SEO y Redes Sociales en Colombia | AC-Consulting" />
+  <meta property="og:description" content="Posicionamiento SEO, gestión de redes sociales y campañas SEM. Estrategias de marketing digital basadas en datos para crecer en Colombia. AC-Consulting." />
+  <meta property="og:url" content="https://ac-consulting.net/servicios/marketing-digital.html" />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Marketing Digital",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "AC-Consulting",
+      "url": "https://ac-consulting.net"
+    },
+    "areaServed": "Colombia",
+    "description": "Posicionamiento SEO, gestión de redes sociales y campañas SEM. Estrategias de marketing digital basadas en datos para crecer en Colombia. AC-Consulting."
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="container header-container">
-            <a href="../index.html" class="logo">
-                <span class="logo-bracket">[</span>
-                <span class="logo-text">TECH</span>
-                <span class="logo-accent">PRO</span>
-                <span class="logo-bracket">]</span>
-            </a>
-            <nav class="nav" id="nav">
-                <ul class="nav-list">
-                    <li><a href="../index.html" class="nav-link">INICIO</a></li>
-                    <li><a href="../index.html#servicios" class="nav-link active">SERVICIOS</a></li>
-                    <li><a href="../index.html#quien-soy" class="nav-link">QUIEN SOY</a></li>
-                    <li><a href="../index.html#blog" class="nav-link">BLOG</a></li>
-                    <li><a href="../index.html#contacto" class="nav-link nav-link-cta">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><span class="logo-mark">A</span><span class="logo-text">C-Consulting</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <nav class="nav" id="nav">
+        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../index.html#servicios" class="nav-link active scroll-link">Servicios</a>
+        <a href="../index.html#quien-soy" class="nav-link">Quién soy</a>
+        <a href="../index.html#blog" class="nav-link">Blog</a>
+        <a href="../contacto.html" class="nav-link nav-cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="container">
+      <a href="../index.html#servicios" class="back-btn">← Volver a Servicios</a>
+      <div class="page-hero-img">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop" alt="Marketing Digital" />
+      </div>
+      <p class="section-label">Nuestros servicios</p>
+      <h1 class="section-title">Marketing <em>Digital</em></h1>
+      <p style="color:var(--text-muted);max-width:600px;margin:0 auto;">Estrategias de marketing basadas en datos que aumentan tu visibilidad, tráfico y conversiones de manera sostenible.</p>
+    </div>
+  </section>
+  <section style="padding:80px 0 120px;">
+    <div class="container">
+      <div class="sub-grid">
+        <div class="sub-card reveal">
+          <h3>Posicionamiento SEO</h3>
+          <p>Auditorías técnicas, optimización on-page, estrategia de contenidos y link building para posicionarte en los primeros resultados de Google de forma orgánica y duradera.</p>
         </div>
-    </header>
-
-    <section class="service-hero">
-        <div class="container">
-            <a href="../index.html#servicios" class="back-link">← VOLVER A SERVICIOS</a>
-            <div class="service-grid">
-                <div class="service-content">
-                    <span class="section-label">[ SERVICIO ]</span>
-                    <h1 class="section-title">MARKETING <span class="accent">DIGITAL</span></h1>
-                    <p class="about-text">Estrategias data-driven que generan tráfico cualificado, aumentan conversiones y maximizan el retorno de inversión.</p>
-                    <a href="../index.html#contacto" class="btn btn-primary">
-                        <span>AUDIT GRATIS</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="service-visual">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Marketing" style="width: 100%; border-radius: 8px; box-shadow: var(--glow-accent);">
-                </div>
-            </div>
+        <div class="sub-card reveal">
+          <h3>Redes Sociales</h3>
+          <p>Gestión integral de tu presencia en Instagram, LinkedIn, Facebook y TikTok. Creación de contenido, community management y análisis de métricas para crecer tu audiencia.</p>
         </div>
-    </section>
-
-    <section class="services" style="padding-top: 4rem;">
-        <div class="container">
-            <span class="section-label">[ ESTRATEGIAS ]</span>
-            <h2 class="section-title" style="font-size: 2.5rem;">SUB<span class="accent">CATEGORÍAS</span></h2>
-
-            <div class="subservices-grid">
-                <div class="subservice-card">
-                    <h3 class="subservice-title">🔍 POSICIONAMIENTO SEO</h3>
-                    <p class="subservice-desc">Optimización on-page, off-page y técnica. Auditorías completas, estrategia de keywords y link building de calidad. Resultados medibles en 3-6 meses.</p>
-                </div>
-                <div class="subservice-card">
-                    <h3 class="subservice-title">📱 REDES SOCIALES</h3>
-                    <p class="subservice-desc">Gestión profesional de Instagram, LinkedIn, Facebook y TikTok. Calendario editorial, diseño de contenido, community management y reporting.</p>
-                </div>
-                <div class="subservice-card">
-                    <h3 class="subservice-title">🎯 MOTORES DE BÚSQUEDA</h3>
-                    <p class="subservice-desc">Campañas SEM en Google Ads y Bing. Optimización de CPC, remarketing, display y YouTube Ads. Maximiza tu ROI con estrategias data-driven.</p>
-                </div>
-            </div>
+        <div class="sub-card reveal">
+          <h3>Motores de Búsqueda (SEM)</h3>
+          <p>Campañas de Google Ads y Microsoft Advertising optimizadas para máximo ROI. Segmentación precisa, A/B testing de anuncios y reportes de rendimiento detallados.</p>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-bottom">
-                    <p>&copy; 2025 TechPro. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../scripts.js"></script>
+      </div>
+      <div style="text-align:center;margin-top:60px;">
+        <a href="../contacto.html" class="btn btn-primary">Solicitar cotización</a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="../index.html" class="logo"><span class="logo-mark">A</span><span class="logo-text">C-Consulting</span></a><p>Transformamos ideas en soluciones digitales.</p><div class="footer-social"><a href="#">in</a><a href="#">𝕏</a><a href="#">⊕</a><a href="#">⌥</a></div></div>
+        <div class="footer-links"><h4>Servicios</h4><a href="diseno-web.html">Diseño Web</a><a href="desarrollo-software.html">Desarrollo</a><a href="servicios-ia.html">IA</a><a href="marketing-digital.html">Marketing</a></div>
+        <div class="footer-links"><h4>Empresa</h4><a href="../index.html#quien-soy">Quién soy</a><a href="../index.html#blog">Blog</a><a href="../contacto.html">Contacto</a></div>
+        <div class="footer-newsletter"><h4>Newsletter</h4><p>Estrategias de marketing en tu inbox.</p><form class="newsletter-form" onsubmit="subscribeNewsletter(event)"><input type="email" placeholder="tu@email.com" required /><button type="submit" class="btn btn-primary">Suscribir</button></form></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 AC-Consulting.</p><p><a href="mailto:angel.clavijo@yahoo.es">angel.clavijo@yahoo.es</a></p></div>
+    </div>
+  </footer>
+  <a class="wa-float" id="waFloat" href="#" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <script src="../scripts.js"></script>
 </body>
 </html>
