@@ -37,7 +37,7 @@ html {
     overflow-y: scroll;
 }
 
-/* Snap Container - Scroll snap solo en estas secciones */
+/* Snap Container */
 .snap-container {
     scroll-snap-type: y proximity;
 }
@@ -855,6 +855,7 @@ h1, h2, h3, h4 {
    ============================================ */
 
 .faq {
+    scroll-margin-top: 80px;
     padding: 8rem 0;
     background: var(--bg-card);
 }

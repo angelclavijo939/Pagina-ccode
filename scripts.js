@@ -229,17 +229,20 @@ function initSmoothScroll() {
             if (href === '#') return;
 
             const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            if (!target) return;
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+            e.preventDefault();
+            const headerOffset = 80;
+
+            // Calcular posición absoluta recorriendo todos los offsetParent
+            let top = 0;
+            let el = target;
+            while (el) {
+                top += el.offsetTop || 0;
+                el = el.offsetParent;
             }
+
+            window.scrollTo({ top: top - headerOffset, behavior: 'smooth' });
         });
     });
 }
