@@ -1,206 +1,255 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inteligencia Artificial y Automatización para Empresas | AC-Consulting</title>
-    <meta name="description" content="Implementamos soluciones de IA para tu empresa: chatbots, machine learning, integraciones con OpenAI y Claude, y automatización de procesos. Consulta gratuita." />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ac-consulting.net/servicios/servicios-ia.html" />
-    <meta property="og:title" content="Inteligencia Artificial y Automatización para Empresas | AC-Consulting" />
-    <meta property="og:description" content="Implementamos soluciones de IA para tu empresa: chatbots, machine learning, integraciones con OpenAI y Claude, y automatización de procesos. Consulta gratuita." />
-    <meta property="og:url" content="https://ac-consulting.net/servicios/servicios-ia.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_CO" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Inteligencia Artificial y Automatización",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "AC-Consulting",
-        "url": "https://ac-consulting.net"
-      },
-      "description": "Desarrollo e implementación de soluciones de inteligencia artificial, chatbots, machine learning y automatización de procesos para empresas",
-      "areaServed": ["Colombia", "Latinoamérica"],
-      "url": "https://ac-consulting.net/servicios/servicios-ia.html"
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios de IA y Chatbots en Colombia | AC-Consulting</title>
+  <meta name="description" content="Desarrollo de IA, chatbots con GPT-4 y Claude, integraciones y fine-tuning de modelos. Soluciones de IA para empresas en Colombia. AC-Consulting." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ac-consulting.cloud/servicios/servicios-ia.html" />
+  <meta property="og:title" content="Servicios de Inteligencia Artificial y Chatbots | AC-Consulting" />
+  <meta property="og:description" content="Desarrollo de IA, chatbots con GPT-4 y Claude, integraciones y fine-tuning de modelos. Soluciones de IA para empresas en Colombia." />
+  <meta property="og:url" content="https://ac-consulting.cloud/servicios/servicios-ia.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1200&auto=format&fit=crop" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Servicios de Inteligencia Artificial",
+    "provider": { "@type": "ProfessionalService", "name": "AC-Consulting", "url": "https://ac-consulting.cloud" },
+    "areaServed": "Colombia",
+    "description": "Desarrollo de IA, chatbots con GPT-4 y Claude, integraciones y fine-tuning de modelos para empresas en Colombia.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de IA",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de IA personalizada" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chatbots con GPT-4 y Claude" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fine-tuning de modelos de lenguaje" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integraciones de IA con sistemas existentes" } }
+      ]
     }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        .service-hero {
-            padding: 10rem 0 6rem;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #301030 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .service-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-            opacity: 0.2;
-            filter: blur(100px);
-        }
-        .service-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .subservices-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        .subservice-card {
-            padding: 2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-        .subservice-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-        .subservice-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-        .subservice-desc {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 2rem;
-            transition: var(--transition);
-        }
-        .back-link:hover {
-            color: var(--accent);
-        }
-        .ai-badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 4px;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            margin-bottom: 1rem;
-        }
-        @media (max-width: 860px) {
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-            .subservices-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://ac-consulting.cloud/" },
+      { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://ac-consulting.cloud/#servicios" },
+      { "@type": "ListItem", "position": 3, "name": "Servicios de IA", "item": "https://ac-consulting.cloud/servicios/servicios-ia.html" }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .service-intro { max-width: 780px; margin: 0 auto 60px; text-align: center; }
+    .service-intro p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; }
+    .sub-card h3 { margin-bottom: 10px; }
+    .sub-card p { color: var(--text-muted); line-height: 1.75; margin-bottom: 10px; font-size: 0.95rem; }
+    .sub-card ul { margin: 0 0 10px 18px; color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; }
+    .sub-card .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .sub-card .stag { font-size: 0.72rem; font-weight: 600; padding: 2px 10px; border-radius: 20px; background: rgba(204,85,0,0.1); border: 1px solid rgba(204,85,0,0.2); color: var(--accent); letter-spacing: .04em; }
+    .process-section { background: var(--card-bg); border: 1px solid rgba(204,85,0,0.2); border-radius: var(--radius-lg); padding: 48px; margin: 60px 0; }
+    .process-section h2 { font-family: var(--font-display); font-size: 1.8rem; color: var(--white); margin-bottom: 32px; text-align: center; }
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; }
+    .step { text-align: center; }
+    .step-num { font-size: 2.2rem; font-weight: 800; color: var(--accent); font-family: var(--font-display); line-height: 1; margin-bottom: 8px; }
+    .step strong { display: block; color: var(--white); font-size: 0.95rem; margin-bottom: 6px; }
+    .step p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+    .faq-section { margin: 60px 0; }
+    .faq-section h2 { font-family: var(--font-display); font-size: 1.8rem; color: var(--white); margin-bottom: 28px; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 18px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-body); font-size: 1rem; font-weight: 500; color: var(--white); }
+    .faq-q::after { content: '+'; font-size: 1.4rem; color: var(--accent); transition: transform .3s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a p { color: var(--text-muted); padding-bottom: 18px; line-height: 1.75; font-size: 0.95rem; }
+  </style>
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="container header-container">
-            <a href="../index.html" class="logo">
-                <span class="logo-bracket">[</span>
-                <span class="logo-text">AC</span>
-                <span class="logo-accent">-CONSULTING</span>
-                <span class="logo-bracket">]</span>
-            </a>
-            <nav class="nav" id="nav">
-                <ul class="nav-list">
-                    <li><a href="../index.html" class="nav-link">INICIO</a></li>
-                    <li><a href="../index.html#servicios" class="nav-link active">SERVICIOS</a></li>
-                    <li><a href="../index.html#quien-soy" class="nav-link">QUIEN SOY</a></li>
-                    <li><a href="../index.html#blog" class="nav-link">BLOG</a></li>
-                    <li><a href="../index.html#contacto" class="nav-link nav-link-cta">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><span class="logo-mark">A</span><span class="logo-text">C-Consulting</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <nav class="nav" id="nav">
+        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../index.html#servicios" class="nav-link active scroll-link">Servicios</a>
+        <a href="../index.html#quien-soy" class="nav-link">Quién soy</a>
+        <a href="../index.html#blog" class="nav-link">Blog</a>
+        <a href="../contacto.html" class="nav-link nav-cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <a href="../index.html#servicios" class="back-btn">← Volver a Servicios</a>
+      <div class="page-hero-img">
+        <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1400&auto=format&fit=crop" alt="Servicios de Inteligencia Artificial Colombia" />
+      </div>
+      <p class="section-label">Nuestros servicios</p>
+      <h1 class="section-title">Servicios de <em>Inteligencia Artificial</em></h1>
+      <p style="color:var(--text-muted);max-width:640px;margin:0 auto;">Implementamos soluciones de IA que automatizan procesos, generan insights y crean ventajas competitivas reales para empresas en Colombia y Latinoamérica.</p>
+    </div>
+  </section>
+
+  <section style="padding:80px 0 0;">
+    <div class="container">
+      <div class="service-intro">
+        <p>La inteligencia artificial dejó de ser exclusiva de las grandes corporaciones. Hoy, una PyME colombiana puede implementar chatbots inteligentes, automatizar procesos repetitivos y analizar datos con modelos de lenguaje avanzados — con la inversión y el tiempo adecuados.</p>
+        <p>En AC-Consulting llevamos más de dos años implementando soluciones de IA para empresas de sectores como retail, fintech, educación y servicios profesionales. Nuestro enfoque es pragmático: identificamos el caso de uso con mayor retorno y lo implementamos en semanas, no en meses.</p>
+      </div>
+
+      <div class="sub-grid">
+        <div class="sub-card reveal">
+          <h3>Desarrollo de IA Personalizada</h3>
+          <p>Diseñamos e implementamos modelos de machine learning y deep learning adaptados a tu problema específico. Desde clasificadores de texto hasta modelos de predicción de demanda o detección de anomalías.</p>
+          <p>Nuestro proceso incluye análisis del problema, preparación de datos, selección del modelo, entrenamiento, evaluación y despliegue en producción con monitoreo continuo.</p>
+          <ul>
+            <li>Modelos de clasificación y regresión</li>
+            <li>Procesamiento de lenguaje natural (NLP)</li>
+            <li>Visión computacional básica</li>
+            <li>Modelos de recomendación</li>
+            <li>Despliegue en AWS, GCP o infraestructura propia</li>
+          </ul>
+          <div class="tag-row"><span class="stag">Python</span><span class="stag">scikit-learn</span><span class="stag">TensorFlow</span><span class="stag">FastAPI</span></div>
         </div>
-    </header>
 
-    <section class="service-hero">
-        <div class="container">
-            <a href="../index.html#servicios" class="back-link">← VOLVER A SERVICIOS</a>
-            <div class="service-grid">
-                <div class="service-content">
-                    <div class="ai-badge">🤖 POWERED BY AI</div>
-                    <span class="section-label">[ SERVICIO ]</span>
-                    <h1 class="section-title">SERVICIOS DE <span class="accent">IA</span></h1>
-                    <p class="about-text">Aprovecha el poder de la Inteligencia Artificial para automatizar procesos, generar insights y crear experiencias personalizadas a escala.</p>
-                    <a href="../index.html#contacto" class="btn btn-primary">
-                        <span>CONSULTORÍA IA</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="service-visual">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop" alt="IA" style="width: 100%; border-radius: 8px; box-shadow: var(--glow-primary);">
-                </div>
-            </div>
+        <div class="sub-card reveal">
+          <h3>Chatbots con GPT-4 y Claude</h3>
+          <p>Desarrollamos asistentes virtuales inteligentes que entienden el contexto, acceden a tus datos en tiempo real y escalan automáticamente cuando el caso lo requiere. No son chatbots de flujo rígido — son asistentes que razonan.</p>
+          <p>Integramos en WhatsApp Business API, sitio web, Slack, Teams o cualquier plataforma empresarial. El chatbot se entrena con la documentación, precios y procesos de tu negocio.</p>
+          <ul>
+            <li>Atención al cliente 24/7 automatizada</li>
+            <li>Asistentes de ventas y calificación de leads</li>
+            <li>Soporte técnico nivel 1</li>
+            <li>Asistentes internos de conocimiento empresarial</li>
+            <li>Integración con CRM y bases de datos</li>
+          </ul>
+          <div class="tag-row"><span class="stag">GPT-4o</span><span class="stag">Claude</span><span class="stag">LangChain</span><span class="stag">WhatsApp API</span></div>
         </div>
-    </section>
 
-    <section class="services" style="padding-top: 4rem;">
-        <div class="container">
-            <span class="section-label">[ INTELIGENCIA ARTIFICIAL ]</span>
-            <h2 class="section-title" style="font-size: 2.5rem;">NUESTROS<span class="accent"> SERVICIOS</span></h2>
-
-            <div class="subservices-grid">
-                <div class="subservice-card">
-                    <h3 class="subservice-title">🧠 DESARROLLO DE IA</h3>
-                    <p class="subservice-desc">Implementación de modelos de machine learning, NLP y computer vision. Soluciones personalizadas para tu negocio.</p>
-                </div>
-                <div class="subservice-card">
-                    <h3 class="subservice-title">📱 APLICACIONES DE IA</h3>
-                    <p class="subservice-desc">Apps inteligentes con reconocimiento de voz, visión por computadora y generación de contenido automatizado.</p>
-                </div>
-                <div class="subservice-card">
-                    <h3 class="subservice-title">💬 CHATBOTS DE IA</h3>
-                    <p class="subservice-desc">Asistentes virtuales con GPT/Claude para atención al cliente, ventas y soporte técnico 24/7.</p>
-                </div>
-                <div class="subservice-card">
-                    <h3 class="subservice-title">🔗 INTEGRACIONES DE IA</h3>
-                    <p class="subservice-desc">Conecta OpenAI, Claude, Google AI u otros modelos a tus sistemas existentes mediante APIs robustas.</p>
-                </div>
-                <div class="subservice-card">
-                    <h3 class="subservice-title">⚙️ PERFECCIONAMIENTO DE MODELOS</h3>
-                    <p class="subservice-desc">Fine-tuning de modelos LLM con tus datos corporativos. Prompt engineering avanzado y optimización de costos.</p>
-                </div>
-            </div>
+        <div class="sub-card reveal">
+          <h3>Fine-tuning de Modelos de Lenguaje</h3>
+          <p>Ajustamos modelos de lenguaje preentrenados con tus datos específicos para obtener respuestas más precisas, con el tono de tu marca y alineadas con tu dominio de negocio. El resultado es un modelo que "habla" como tu empresa.</p>
+          <p>Ideal para empresas con terminología técnica especializada, bases de conocimiento propietarias o que requieren un nivel de privacidad que impide usar APIs externas con datos sensibles.</p>
+          <ul>
+            <li>Fine-tuning de GPT-4, Llama y Mistral</li>
+            <li>Preparación y limpieza del dataset de entrenamiento</li>
+            <li>Evaluación y benchmarking del modelo ajustado</li>
+            <li>Despliegue privado en infraestructura segura</li>
+            <li>Documentación técnica completa</li>
+          </ul>
+          <div class="tag-row"><span class="stag">OpenAI Fine-tuning</span><span class="stag">LLaMA</span><span class="stag">Mistral</span><span class="stag">RLHF</span></div>
         </div>
-    </section>
 
-    <footer class="footer">
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-bottom">
-                    <p>&copy; 2026 AC-Consulting. Todos los derechos reservados.</p>
-                </div>
-            </div>
+        <div class="sub-card reveal">
+          <h3>Sistemas RAG (Búsqueda + IA)</h3>
+          <p>Los sistemas RAG (Retrieval-Augmented Generation) conectan modelos de lenguaje con tu base de conocimiento interna. El resultado: un asistente que responde preguntas usando documentos, manuales, reportes y datos reales de tu empresa.</p>
+          <p>Imagina que cada empleado tuviera acceso instantáneo a todo el conocimiento acumulado de la organización. Los sistemas RAG hacen exactamente eso, con respuestas precisas y con fuentes citables.</p>
+          <ul>
+            <li>Indexación de documentos PDF, Word, Notion, Confluence</li>
+            <li>Búsqueda semántica con embeddings</li>
+            <li>Interfaz de consulta en lenguaje natural</li>
+            <li>Control de acceso por rol</li>
+            <li>Actualizaciones automáticas de la base de conocimiento</li>
+          </ul>
+          <div class="tag-row"><span class="stag">LlamaIndex</span><span class="stag">Pinecone</span><span class="stag">pgvector</span><span class="stag">LangChain</span></div>
         </div>
-    </footer>
 
-    <script src="../scripts.js"></script>
+        <div class="sub-card reveal">
+          <h3>Integraciones de IA con Sistemas Existentes</h3>
+          <p>Conectamos modelos y herramientas de IA con tu infraestructura actual: CRM, ERP, bases de datos, plataformas de e-commerce y aplicaciones web. Sin reemplazar lo que ya funciona — potenciándolo.</p>
+          <ul>
+            <li>APIs RESTful documentadas para consumo interno</li>
+            <li>Webhooks y automatizaciones con Make/n8n</li>
+            <li>Integración con Salesforce, HubSpot, SAP</li>
+            <li>Procesamiento automático de documentos e emails</li>
+            <li>Análisis de sentimientos en feedback de clientes</li>
+          </ul>
+          <div class="tag-row"><span class="stag">FastAPI</span><span class="stag">Make</span><span class="stag">n8n</span><span class="stag">REST APIs</span></div>
+        </div>
+
+        <div class="sub-card reveal">
+          <h3>Automatización Inteligente de Procesos</h3>
+          <p>Combinamos IA generativa con automatización de flujos para eliminar tareas repetitivas de alto volumen: clasificación de emails, generación de reportes, extracción de datos de documentos y respuesta automática a consultas estándar.</p>
+          <ul>
+            <li>Clasificación y enrutamiento automático de solicitudes</li>
+            <li>Generación de reportes ejecutivos periódicos</li>
+            <li>Extracción de datos de facturas y contratos (OCR + IA)</li>
+            <li>Borradores automáticos de respuestas para revisión humana</li>
+            <li>Monitoreo y alertas inteligentes</li>
+          </ul>
+          <div class="tag-row"><span class="stag">Python</span><span class="stag">OpenAI</span><span class="stag">Make</span><span class="stag">Zapier</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section style="padding:60px 0 0;">
+    <div class="container">
+      <div class="process-section">
+        <h2>Nuestro proceso de implementación</h2>
+        <div class="process-steps">
+          <div class="step"><div class="step-num">01</div><strong>Diagnóstico</strong><p>Sesión gratuita de 45 min para identificar el caso de uso con mayor ROI en tu operación.</p></div>
+          <div class="step"><div class="step-num">02</div><strong>Propuesta técnica</strong><p>Arquitectura detallada, stack tecnológico, cronograma y presupuesto antes de comenzar.</p></div>
+          <div class="step"><div class="step-num">03</div><strong>Desarrollo iterativo</strong><p>Sprints de 2 semanas con demos funcionales. Feedback continuo para ajustar el rumbo.</p></div>
+          <div class="step"><div class="step-num">04</div><strong>Despliegue y capacitación</strong><p>Lanzamiento en producción con documentación completa y capacitación del equipo.</p></div>
+          <div class="step"><div class="step-num">05</div><strong>Soporte continuo</strong><p>Monitoreo del rendimiento, ajustes del modelo y soporte técnico post-lanzamiento.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding:60px 0 120px;">
+    <div class="container" style="max-width:780px;">
+      <div class="faq-section">
+        <h2>Preguntas frecuentes sobre IA</h2>
+        <div class="faq-item">
+          <button class="faq-q">¿Cuánto cuesta implementar un chatbot con IA?</button>
+          <div class="faq-a"><p>Depende de la complejidad: un chatbot básico con respuestas predefinidas y IA puede estar listo desde $800 USD. Un asistente con acceso a base de datos, integración con CRM y múltiples canales está en el rango de $2.000-$6.000 USD. Hacemos diagnósticos gratuitos para darte una estimación precisa.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Mis datos están seguros al usar GPT-4 o Claude?</button>
+          <div class="faq-a"><p>Para datos sensibles, implementamos modelos open-source (LLaMA, Mistral) en tu propia infraestructura, sin que ningún dato salga de tus servidores. Para datos no sensibles, OpenAI y Anthropic ofrecen acuerdos de confidencialidad empresarial (Business API) que excluyen el uso de tus datos para entrenar modelos.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cuánto tiempo tarda una implementación de IA?</button>
+          <div class="faq-a"><p>Un chatbot funcional puede estar listo en 2-3 semanas. Un sistema RAG completo con integración a sistemas existentes toma 4-8 semanas. Proyectos de fine-tuning o modelos personalizados pueden tomar 6-12 semanas dependiendo del volumen de datos.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Qué pasa si el modelo comete errores?</button>
+          <div class="faq-a"><p>Todo sistema de IA tiene un mecanismo de escalamiento a humanos para casos no contemplados o de alta importancia. Monitoreamos el rendimiento del modelo en producción y realizamos ajustes periódicos. El objetivo es reducir errores continuamente, no eliminarlos desde el día uno.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Necesito un equipo técnico interno para mantener la solución?</button>
+          <div class="faq-a"><p>No. Ofrecemos planes de mantenimiento mensual que incluyen monitoreo, actualizaciones del modelo y soporte técnico. Si prefieres que tu equipo gestione la solución, entregamos documentación completa y capacitación incluida en todos los proyectos.</p></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="../contacto.html" class="btn btn-primary">Solicitar diagnóstico gratuito</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="../index.html" class="logo"><span class="logo-mark">A</span><span class="logo-text">C-Consulting</span></a><p>Transformamos ideas en soluciones digitales que generan resultados reales.</p><div class="footer-social"><a href="#">in</a><a href="#">𝕏</a><a href="#">⊕</a><a href="https://github.com/angelclavijo939">⌥</a></div></div>
+        <div class="footer-links"><h4>Servicios</h4><a href="diseno-web.html">Diseño Web</a><a href="desarrollo-software.html">Desarrollo de Software</a><a href="servicios-ia.html">Servicios de IA</a><a href="marketing-digital.html">Marketing Digital</a></div>
+        <div class="footer-links"><h4>Empresa</h4><a href="../index.html#quien-soy">Quién soy</a><a href="../index.html#blog">Blog</a><a href="../contacto.html">Contacto</a></div>
+        <div class="footer-newsletter"><h4>Newsletter</h4><p>Lo último en IA y tecnología.</p><form class="newsletter-form" onsubmit="subscribeNewsletter(event)"><input type="email" placeholder="tu@email.com" required /><button type="submit" class="btn btn-primary">Suscribir</button></form></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 AC-Consulting. Todos los derechos reservados.</p><p>Contacto legal: <a href="mailto:hola@ac-consulting.cloud">hola@ac-consulting.cloud</a></p></div>
+    </div>
+  </footer>
+  <a class="wa-float" id="waFloat" href="#" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <script src="../scripts.js"></script>
 </body>
 </html>
