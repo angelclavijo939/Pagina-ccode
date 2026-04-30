@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitectura Limpia en Python: Guía Práctica para Proyectos Escalables | AC-Consulting</title>
+  <meta name="description" content="Aprende a aplicar Clean Architecture en Python con ejemplos reales. Separa responsabilidades, mejora la mantenibilidad y construye software que escala. Guía práctica con código.">
+  <link rel="canonical" href="https://ac-consulting.net/blog/arquitectura-limpia-python.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Arquitectura Limpia en Python: Guía Práctica para Proyectos Escalables",
+    "description": "Aprende a aplicar Clean Architecture en Python con ejemplos reales. Separa responsabilidades, mejora la mantenibilidad y construye software que escala.",
+    "image": "https://ac-consulting.net/assets/blog/arquitectura-limpia-python.jpg",
+    "datePublished": "2026-04-29",
+    "dateModified": "2026-04-29",
+    "author": {
+      "@type": "Person",
+      "name": "Ángel Clavijo",
+      "@id": "https://ac-consulting.net/#angel-clavijo"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AC-Consulting",
+      "@id": "https://ac-consulting.net/#organization"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ac-consulting.net/blog/arquitectura-limpia-python.html"
+    },
+    "keywords": ["arquitectura limpia Python", "clean architecture Python", "desarrollo software Colombia", "patrones de diseño Python", "código escalable Python"],
+    "articleSection": "Desarrollo",
+    "inLanguage": "es-CO"
+  }
+  </script>
+
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; line-height: 1.75; color: #1a1a1a; }
+    h1 { font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; }
+    h2 { font-size: 1.4rem; margin-top: 2.5rem; margin-bottom: 0.75rem; border-bottom: 2px solid #f0eeff; padding-bottom: 6px; }
+    h3 { font-size: 1.1rem; margin-top: 1.8rem; color: #4a4a8a; }
+    p { margin-bottom: 1rem; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+    blockquote { border-left: 4px solid #6c63ff; padding: 10px 16px; color: #444; margin: 1.5rem 0; font-style: italic; background: #faf9ff; border-radius: 0 6px 6px 0; }
+    pre { background: #1a1a2e; color: #e8e8f0; padding: 20px; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6; margin: 1.2rem 0; }
+    code { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+    p code, li code { background: #f0eeff; color: #5a52cc; padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }
+    .back { display: inline-block; margin-bottom: 2rem; color: #6c63ff; text-decoration: none; font-size: 0.9rem; }
+    .back:hover { text-decoration: underline; }
+    .cta-box { background: #f0eeff; border: 1px solid #c4bfff; border-radius: 8px; padding: 24px; margin-top: 3rem; }
+    .cta-box h3 { margin-top: 0; color: #1a1a1a; }
+    ul li, ol li { margin-bottom: 0.5rem; }
+    .layer-diagram { background: #1a1a2e; border-radius: 10px; padding: 24px; text-align: center; margin: 1.5rem 0; color: #e8e8f0; font-family: monospace; font-size: 0.9rem; line-height: 2; }
+    .layer-diagram .layer { border: 1px solid #6c63ff44; border-radius: 6px; padding: 6px 20px; margin: 4px auto; }
+    .layer-diagram .l1 { background: #6c63ff22; max-width: 200px; }
+    .layer-diagram .l2 { background: #00d9a322; max-width: 300px; }
+    .layer-diagram .l3 { background: #ffa50022; max-width: 400px; }
+    .layer-diagram .l4 { background: #ff6b6b22; max-width: 500px; }
+    .arrow { color: #6c63ff; font-size: 1.1rem; }
+    .tip { background: #f0fff8; border: 1px solid #00d9a344; border-radius: 6px; padding: 12px 16px; margin: 1rem 0; font-size: 0.93rem; }
+    .tip::before { content: '💡 '; }
+  </style>
+</head>
+<body>
+
+<a href="https://ac-consulting.net/#blog" class="back">← Volver al Blog</a>
+
+<article>
+
+  <p class="meta">
+    Por <strong>Ángel Clavijo</strong> · AC-Consulting ·
+    <time datetime="2026-04-29">29 de abril de 2026</time> ·
+    Categoría: <strong>Desarrollo</strong> · 12 min de lectura
+  </p>
+
+  <h1>Arquitectura Limpia en Python: Guía Práctica para Proyectos Escalables</h1>
+
+  <p>
+    Uno de los problemas más comunes que veo cuando llego a un proyecto Python heredado es lo mismo de siempre: lógica de negocio mezclada con acceso a base de datos, controladores HTTP que validan, calculan y persisten al mismo tiempo, y tests que no existen porque "todo está tan acoplado que es imposible probar nada sin levantar toda la aplicación".
+  </p>
+
+  <p>
+    La Arquitectura Limpia (Clean Architecture), propuesta por Robert C. Martin, no es una bala de plata — pero aplicada con criterio en Python resuelve exactamente estos problemas. En este artículo te muestro cómo hacerlo con ejemplos de código reales, sin dogmatismos y adaptado al ecosistema Python moderno.
+  </p>
+
+  <h2>¿Qué es la Arquitectura Limpia y por qué importa en Python?</h2>
+
+  <p>
+    La idea central es simple: <strong>el código de negocio no debe depender de detalles de infraestructura</strong>. Tu lógica de dominio no debe saber si los datos vienen de PostgreSQL, MongoDB, una API externa o un archivo CSV. Tampoco debe saber si la interfaz es un endpoint FastAPI, un comando CLI o un mensaje de Kafka.
+  </p>
+
+  <p>Esto se logra organizando el código en capas concéntricas donde las dependencias siempre apuntan hacia adentro:</p>
+
+  <div class="layer-diagram">
+    <div class="layer l1">🏛️ Entities (Dominio puro)</div>
+    <div class="arrow">↑ depende de</div>
+    <div class="layer l2">⚙️ Use Cases (Lógica de aplicación)</div>
+    <div class="arrow">↑ depende de</div>
+    <div class="layer l3">🔌 Interface Adapters (Repositorios, Presenters)</div>
+    <div class="arrow">↑ depende de</div>
+    <div class="layer l4">🌐 Frameworks & Drivers (FastAPI, SQLAlchemy, etc.)</div>
+  </div>
+
+  <p>
+    La regla de dependencia es absoluta: <strong>las capas externas pueden conocer las internas, pero nunca al revés</strong>. Esto es lo que hace que el código sea testeable, intercambiable y mantenible a largo plazo.
+  </p>
+
+  <h2>Estructura de carpetas en un proyecto real</h2>
+
+  <p>Así organizo los proyectos en AC-Consulting cuando aplicamos esta arquitectura:</p>
+
+  <pre><code>mi_proyecto/
+├── domain/                  # Capa de dominio — sin dependencias externas
+│   ├── entities/
+│   │   └── usuario.py       # Clases de negocio puras
+│   ├── repositories/
+│   │   └── usuario_repo.py  # Interfaces (ABCs)
+│   └── exceptions.py        # Excepciones de dominio
+│
+├── application/             # Casos de uso — solo depende de domain/
+│   └── use_cases/
+│       ├── crear_usuario.py
+│       └── obtener_usuario.py
+│
+├── infrastructure/          # Implementaciones concretas
+│   ├── database/
+│   │   └── sqlalchemy_usuario_repo.py
+│   └── external/
+│       └── email_service.py
+│
+├── interfaces/              # Adaptadores de entrada
+│   ├── api/
+│   │   └── routes/usuario.py
+│   └── cli/
+│       └── commands.py
+│
+└── main.py                  # Composición y arranque (DI)</code></pre>
+
+  <h2>Implementación paso a paso</h2>
+
+  <h3>1. La Entidad de Dominio</h3>
+
+  <p>
+    Las entidades son el corazón del sistema. Son clases Python puras — sin ORM, sin validación de HTTP, sin nada externo. Solo lógica de negocio:
+  </p>
+
+  <pre><code># domain/entities/usuario.py
+from dataclasses import dataclass, field
+from datetime import datetime
+from uuid import UUID, uuid4
+
+
+@dataclass
+class Usuario:
+    nombre: str
+    email: str
+    id: UUID = field(default_factory=uuid4)
+    creado_en: datetime = field(default_factory=datetime.utcnow)
+    activo: bool = True
+
+    def desactivar(self) -> None:
+        """Lógica de negocio: desactivar usuario."""
+        if not self.activo:
+            raise ValueError("El usuario ya está inactivo.")
+        self.activo = False
+
+    def cambiar_email(self, nuevo_email: str) -> None:
+        if "@" not in nuevo_email:
+            raise ValueError(f"Email inválido: {nuevo_email}")
+        self.email = nuevo_email</code></pre>
+
+  <p>
+    Nota que <code>Usuario</code> no hereda de nada externo. No tiene decoradores de SQLAlchemy, no importa Pydantic. Es Python puro — y por eso es trivialmente testeable.
+  </p>
+
+  <h3>2. El Repositorio como Interfaz (Abstracción)</h3>
+
+  <p>
+    Definimos qué operaciones necesitamos sobre usuarios sin decir cómo se implementan:
+  </p>
+
+  <pre><code># domain/repositories/usuario_repo.py
+from abc import ABC, abstractmethod
+from uuid import UUID
+from domain.entities.usuario import Usuario
+
+
+class UsuarioRepository(ABC):
+
+    @abstractmethod
+    def guardar(self, usuario: Usuario) -> None:
+        ...
+
+    @abstractmethod
+    def obtener_por_id(self, id: UUID) -> Usuario | None:
+        ...
+
+    @abstractmethod
+    def obtener_por_email(self, email: str) -> Usuario | None:
+        ...</code></pre>
+
+  <div class="tip">
+    Esta interfaz vive en <code>domain/</code> — la capa más interna. La implementación concreta estará en <code>infrastructure/</code>, pero el dominio nunca la importa directamente.
+  </div>
+
+  <h3>3. El Caso de Uso</h3>
+
+  <p>
+    Los casos de uso orquestan las entidades y los repositorios. Aquí vive la lógica de aplicación — no de negocio puro, sino del flujo de la operación:
+  </p>
+
+  <pre><code># application/use_cases/crear_usuario.py
+from dataclasses import dataclass
+from domain.entities.usuario import Usuario
+from domain.repositories.usuario_repo import UsuarioRepository
+from domain.exceptions import EmailYaRegistrado
+
+
+@dataclass
+class CrearUsuarioInput:
+    nombre: str
+    email: str
+
+
+@dataclass
+class CrearUsuarioOutput:
+    id: str
+    nombre: str
+    email: str
+
+
+class CrearUsuario:
+    def __init__(self, repo: UsuarioRepository) -> None:
+        self._repo = repo
+
+    def ejecutar(self, datos: CrearUsuarioInput) -> CrearUsuarioOutput:
+        # Verificar unicidad
+        if self._repo.obtener_por_email(datos.email):
+            raise EmailYaRegistrado(datos.email)
+
+        usuario = Usuario(nombre=datos.nombre, email=datos.email)
+        self._repo.guardar(usuario)
+
+        return CrearUsuarioOutput(
+            id=str(usuario.id),
+            nombre=usuario.nombre,
+            email=usuario.email,
+        )</code></pre>
+
+  <h3>4. La Implementación Concreta del Repositorio</h3>
+
+  <p>Aquí vive SQLAlchemy, psycopg2, o lo que uses. Esta capa puede cambiar sin tocar nada de la lógica de negocio:</p>
+
+  <pre><code># infrastructure/database/sqlalchemy_usuario_repo.py
+from uuid import UUID
+from sqlalchemy.orm import Session
+from domain.entities.usuario import Usuario
+from domain.repositories.usuario_repo import UsuarioRepository
+from infrastructure.database.models import UsuarioModel
+
+
+class SQLAlchemyUsuarioRepository(UsuarioRepository):
+    def __init__(self, session: Session) -> None:
+        self._session = session
+
+    def guardar(self, usuario: Usuario) -> None:
+        modelo = UsuarioModel(
+            id=str(usuario.id),
+            nombre=usuario.nombre,
+            email=usuario.email,
+            activo=usuario.activo,
+        )
+        self._session.add(modelo)
+        self._session.commit()
+
+    def obtener_por_id(self, id: UUID) -> Usuario | None:
+        modelo = self._session.get(UsuarioModel, str(id))
+        if not modelo:
+            return None
+        return Usuario(
+            id=modelo.id,
+            nombre=modelo.nombre,
+            email=modelo.email,
+            activo=modelo.activo,
+        )
+
+    def obtener_por_email(self, email: str) -> Usuario | None:
+        modelo = self._session.query(UsuarioModel).filter_by(email=email).first()
+        if not modelo:
+            return None
+        return Usuario(id=modelo.id, nombre=modelo.nombre, email=modelo.email)</code></pre>
+
+  <h3>5. El Adaptador de Entrada (FastAPI)</h3>
+
+  <pre><code># interfaces/api/routes/usuario.py
+from fastapi import APIRouter, Depends, HTTPException
+from pydantic import BaseModel
+from application.use_cases.crear_usuario import CrearUsuario, CrearUsuarioInput
+from domain.exceptions import EmailYaRegistrado
+from infrastructure.dependencies import get_crear_usuario  # inyección
+
+router = APIRouter(prefix="/usuarios", tags=["usuarios"])
+
+
+class CrearUsuarioRequest(BaseModel):
+    nombre: str
+    email: str
+
+
+@router.post("/", status_code=201)
+def crear_usuario(
+    body: CrearUsuarioRequest,
+    use_case: CrearUsuario = Depends(get_crear_usuario),
+):
+    try:
+        resultado = use_case.ejecutar(
+            CrearUsuarioInput(nombre=body.nombre, email=body.email)
+        )
+        return resultado
+    except EmailYaRegistrado as e:
+        raise HTTPException(status_code=409, detail=str(e))</code></pre>
+
+  <h2>Por qué esto hace tus tests un 10x más fáciles</h2>
+
+  <p>
+    El mayor beneficio inmediato es el testing. Con este diseño, puedes testear el caso de uso con un repositorio en memoria — sin base de datos, sin fixtures complejos, sin Docker:
+  </p>
+
+  <pre><code># tests/test_crear_usuario.py
+import pytest
+from application.use_cases.crear_usuario import CrearUsuario, CrearUsuarioInput
+from domain.exceptions import EmailYaRegistrado
+
+
+class RepositorioEnMemoria:
+    def __init__(self):
+        self._store = {}
+
+    def guardar(self, usuario):
+        self._store[str(usuario.id)] = usuario
+
+    def obtener_por_id(self, id):
+        return self._store.get(str(id))
+
+    def obtener_por_email(self, email):
+        return next((u for u in self._store.values() if u.email == email), None)
+
+
+def test_crear_usuario_exitoso():
+    repo = RepositorioEnMemoria()
+    use_case = CrearUsuario(repo)
+
+    resultado = use_case.ejecutar(
+        CrearUsuarioInput(nombre="Ángel", email="hola@ac-consulting.net")
+    )
+
+    assert resultado.email == "hola@ac-consulting.net"
+    assert resultado.nombre == "Ángel"
+
+
+def test_email_duplicado_lanza_excepcion():
+    repo = RepositorioEnMemoria()
+    use_case = CrearUsuario(repo)
+    datos = CrearUsuarioInput(nombre="Ángel", email="hola@ac-consulting.net")
+
+    use_case.ejecutar(datos)
+
+    with pytest.raises(EmailYaRegistrado):
+        use_case.ejecutar(datos)</code></pre>
+
+  <p>Tests que corren en milisegundos, sin estado externo, sin mocks frágiles.</p>
+
+  <h2>¿Cuándo aplicarla y cuándo no?</h2>
+
+  <p>
+    Sería deshonesto no decirlo: la Arquitectura Limpia añade capas y archivos. Para un script de 200 líneas o un CRUD simple sin lógica de negocio, es sobredimensionada. Úsala cuando:
+  </p>
+
+  <ul>
+    <li>El proyecto tiene lógica de negocio real y compleja</li>
+    <li>Esperas cambiar la base de datos o el framework en el futuro</li>
+    <li>El equipo tiene más de una persona y necesitan fronteras claras</li>
+    <li>Necesitas alta cobertura de tests sin depender de infraestructura</li>
+    <li>El sistema debe mantenerse durante 2+ años</li>
+  </ul>
+
+  <p>
+    Para proyectos pequeños, un buen diseño por módulos con separación básica de responsabilidades es suficiente. No siempre necesitas las 4 capas completas — a veces con separar <code>domain/</code> de <code>infrastructure/</code> es suficiente para obtener el 80% del beneficio.
+  </p>
+
+  <h2>Conclusión</h2>
+
+  <p>
+    La Arquitectura Limpia en Python no es complicada — es disciplinada. El mayor beneficio no es el diseño elegante sino la capacidad de cambiar partes del sistema sin miedo: cambiar de PostgreSQL a MongoDB, de FastAPI a Django, de SQLAlchemy a un ORM diferente, todo sin tocar una línea de lógica de negocio.
+  </p>
+
+  <p>
+    En AC-Consulting aplicamos estos principios en proyectos de clientes en Colombia que necesitan software que dure y escale. Si estás construyendo algo que debe sobrevivir más de 6 meses, vale la pena hacerlo bien desde el principio.
+  </p>
+
+  <div class="cta-box">
+    <h3>¿Necesitas revisar la arquitectura de tu proyecto Python?</h3>
+    <p>En AC-Consulting hacemos auditorías de código y refactoring con foco en mantenibilidad y escalabilidad. Primera sesión sin costo.</p>
+    <p><a href="https://ac-consulting.net/#contacto"><strong>→ Agendar revisión de arquitectura</strong></a></p>
+  </div>
+
+</article>
+
+</body>
+</html>
