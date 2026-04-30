@@ -1,81 +1,146 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo Web, IA y Marketing Digital en Colombia | AC-Consulting</title>
 
     <!-- SEO básico -->
-    <meta name="description" content="Agencia digital en Colombia especializada en desarrollo web, inteligencia artificial y marketing digital. Más de 8 años ayudando a empresas a crecer en internet. Solicita tu consulta gratuita." />
+    <meta name="description" content="Agencia digital en Colombia especializada en desarrollo web, inteligencia artificial y marketing digital. Más de 10 años ayudando a empresas a crecer en internet. Solicita tu consulta gratuita." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ac-consulting.net/" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
-    <!-- Open Graph (LinkedIn, WhatsApp, redes sociales) -->
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es-CO" href="https://ac-consulting.net/" />
+    <link rel="alternate" hreflang="es" href="https://ac-consulting.net/" />
+
+    <!-- llms.txt — citabilidad en motores de IA -->
+    <link rel="llms" type="text/plain" href="https://ac-consulting.net/llms.txt" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Desarrollo Web, IA y Marketing Digital en Colombia | AC-Consulting" />
-    <meta property="og:description" content="Agencia digital en Colombia: desarrollo web, inteligencia artificial y marketing digital. Más de 8 años transformando negocios. Consulta gratuita." />
+    <meta property="og:description" content="Agencia digital en Colombia: desarrollo web, inteligencia artificial y marketing digital. Más de 10 años transformando negocios. Consulta gratuita." />
     <meta property="og:url" content="https://ac-consulting.net/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="AC-Consulting" />
+    <!-- TODO: crear imagen de 1200x630 px y subir a /assets/og-image.jpg -->
+    <meta property="og:image" content="https://ac-consulting.net/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AC-Consulting — Desarrollo Web, IA y Marketing Digital en Colombia" />
 
-    <!-- Schema.org (datos estructurados) -->
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Desarrollo Web, IA y Marketing Digital en Colombia | AC-Consulting" />
+    <meta name="twitter:description" content="Agencia digital en Colombia: desarrollo web, IA y marketing digital. Consulta gratuita." />
+    <meta name="twitter:image" content="https://ac-consulting.net/assets/og-image.jpg" />
+
+    <!-- Schema.org — 4 bloques JSON-LD -->
+
+    <!-- 1. WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "AC-Consulting",
+      "@type": "WebSite",
+      "@id": "https://ac-consulting.net/#website",
       "url": "https://ac-consulting.net",
-      "description": "Agencia digital en Colombia especializada en desarrollo web, inteligencia artificial y marketing digital",
-      "areaServed": ["Colombia", "Latinoamérica", "Estados Unidos"],
+      "name": "AC-Consulting — Desarrollo Web, IA y Marketing Digital en Colombia",
+      "inLanguage": "es-CO",
+      "publisher": { "@id": "https://ac-consulting.net/#organization" }
+    }
+    </script>
+
+    <!-- 2. ProfessionalService + LocalBusiness + AggregateRating + Reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://ac-consulting.net/#organization",
+      "name": "AC-Consulting",
+      "alternateName": "AC Consulting Colombia",
+      "url": "https://ac-consulting.net",
+      "description": "Agencia digital en Colombia especializada en desarrollo web, inteligencia artificial y marketing digital. Más de 10 años transformando negocios en Latinoamérica.",
+      "foundingDate": "2016",
+      "email": "hola@ac-consulting.net",
+      "telephone": "+57-311-224-1803",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "CO",
-        "addressRegion": "Colombia"
+        "addressRegion": "Bogotá"
       },
+      "areaServed": [
+        { "@type": "Country", "name": "Colombia" },
+        { "@type": "AdministrativeArea", "name": "Latinoamérica" },
+        { "@type": "Country", "name": "Estados Unidos" }
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+57-311-224-1803",
         "contactType": "customer service",
         "availableLanguage": ["Spanish", "English"]
       },
-      "founder": {
-        "@type": "Person",
-        "name": "Ángel Clavijo",
-        "jobTitle": "Desarrollador Full-Stack y Especialista en IA",
-        "url": "https://ac-consulting.net/#quien-soy",
-        "sameAs": [
-          "https://github.com/angelclavijo939/Pagina-ccode",
-          "https://ac-consulting.cloud"
-        ]
-      },
+      "priceRange": "$$",
+      "serviceType": [
+        "Diseño Web", "Desarrollo de Software", "Marketing Digital",
+        "Inteligencia Artificial", "Automatización", "Consultoría de Negocios"
+      ],
       "sameAs": [
         "https://ac-consulting.cloud",
         "https://github.com/angelclavijo939/Pagina-ccode"
       ],
-      "serviceType": ["Diseño Web", "Desarrollo de Software", "Marketing Digital", "Inteligencia Artificial", "Consultoría de Negocios"]
+      "founder": { "@id": "https://ac-consulting.net/#angel-clavijo" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "3",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Carlos Mendoza" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "La implementación de IA redujo nuestros tiempos de atención al cliente en un 70%. Un trabajo excepcional que superó todas nuestras expectativas.",
+          "datePublished": "2025-11-01"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Ana Lucía Vargas" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "El rediseño de nuestra plataforma aumentó las conversiones un 340%. Profesionalismo, creatividad y resultados tangibles desde el día uno.",
+          "datePublished": "2025-09-15"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Roberto Sánchez" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Su expertise en PL/SQL y sistemas legacy nos salvó de un desastre. Migración impecable y soporte continuo de primera.",
+          "datePublished": "2025-07-20"
+        }
+      ]
     }
     </script>
+
+    <!-- 3. Person — Ángel Clavijo -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://ac-consulting.net/#angel-clavijo",
       "name": "Ángel Clavijo",
       "jobTitle": "Desarrollador Full-Stack y Especialista en IA",
+      "description": "Desarrollador full-stack y especialista en Inteligencia Artificial con más de 10 años de experiencia en Colombia y Latinoamérica.",
       "url": "https://ac-consulting.net/#quien-soy",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "AC-Consulting",
-        "url": "https://ac-consulting.net"
-      },
+      "email": "hola@ac-consulting.net",
+      "telephone": "+57-311-224-1803",
+      "worksFor": { "@id": "https://ac-consulting.net/#organization" },
       "knowsAbout": [
-        "Desarrollo de Software",
-        "Inteligencia Artificial",
-        "Machine Learning",
-        "React",
-        "Python",
-        "Marketing Digital",
-        "PL/SQL",
-        "Oracle"
+        "Desarrollo de Software", "Inteligencia Artificial", "Machine Learning",
+        "React", "Python", "Next.js", "Marketing Digital", "PL/SQL", "Oracle",
+        "AWS", "Docker", "PostgreSQL"
       ],
       "sameAs": [
         "https://github.com/angelclavijo939/Pagina-ccode",
@@ -84,6 +149,8 @@
       ]
     }
     </script>
+
+    <!-- 4. FAQPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -466,7 +533,7 @@
                         </div>
                         <h3 class="blog-title">El Futuro del Desarrollo con IA Generativa</h3>
                         <p class="blog-excerpt">Cómo herramientas como Claude y GPT están revolucionando la forma en que construimos software...</p>
-                        <a href="#" class="blog-link">LEER MÁS →</a>
+                        <a href="/blog/futuro-desarrollo-ia-generativa.html" class="blog-link">LEER MÁS →</a>
                     </div>
                 </article>
                 <article class="blog-card">
@@ -481,7 +548,7 @@
                         </div>
                         <h3 class="blog-title">SEO 2025: Estrategias que Sí Funcionan</h3>
                         <p class="blog-excerpt">Los algoritmos cambian, pero estos principios permanecen. Guía definitiva para posicionamiento...</p>
-                        <a href="#" class="blog-link">LEER MÁS →</a>
+                        <a href="/blog/seo-2025-estrategias-que-funcionan.html" class="blog-link">LEER MÁS →</a>
                     </div>
                 </article>
                 <article class="blog-card">
@@ -496,7 +563,7 @@
                         </div>
                         <h3 class="blog-title">Arquitectura Limpia en Python</h3>
                         <p class="blog-excerpt">Patrones y mejores prácticas para construir aplicaciones escalables y mantenibles...</p>
-                        <a href="#" class="blog-link">LEER MÁS →</a>
+                        <a href="/blog/arquitectura-limpia-python.html" class="blog-link">LEER MÁS →</a>
                     </div>
                 </article>
             </div>
@@ -670,8 +737,8 @@
                 <div class="footer-bottom">
                     <p>&copy; 2026 AC-Consulting. Todos los derechos reservados.</p>
                     <div class="footer-legal">
-                        <a href="#">Política de Privacidad</a>
-                        <a href="#">Términos de Servicio</a>
+                        <a href="/privacidad.html">Política de Privacidad</a>
+                        <a href="/terminos.html">Términos de Servicio</a>
                     </div>
                 </div>
             </div>

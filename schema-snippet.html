@@ -1,0 +1,251 @@
+<!--
+  ============================================================
+  INSTRUCCIONES DE USO
+  ============================================================
+  Pega este bloque completo DENTRO del <head> de tu index.html,
+  justo antes del cierre </head>.
+
+  Reemplaza los valores marcados con [TU_...] antes de subir.
+  ============================================================
+-->
+
+<!-- 1. SCHEMA: Person (Ángel Clavijo) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://ac-consulting.net/#angel-clavijo",
+  "name": "Ángel Clavijo",
+  "jobTitle": "Desarrollador Full-Stack y Especialista en IA",
+  "description": "Desarrollador full-stack y especialista en Inteligencia Artificial con más de 8 años transformando ideas en soluciones digitales. Experto en React, Python, Next.js, AWS y automatización con IA.",
+  "url": "https://ac-consulting.net",
+  "email": "hola@ac-consulting.net",
+  "telephone": "+573112241803",
+  "image": "https://ac-consulting.net/assets/angel-clavijo.jpg",
+  "sameAs": [
+    "[TU_URL_LINKEDIN]",
+    "[TU_URL_GITHUB]"
+  ],
+  "knowsAbout": [
+    "Desarrollo Web",
+    "Inteligencia Artificial",
+    "React",
+    "Python",
+    "SEO",
+    "Marketing Digital",
+    "Next.js",
+    "AWS",
+    "Automatización"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "@id": "https://ac-consulting.net/#organization"
+  }
+}
+</script>
+
+<!-- 2. SCHEMA: ProfessionalService / LocalBusiness (AC-Consulting) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["ProfessionalService", "LocalBusiness"],
+  "@id": "https://ac-consulting.net/#organization",
+  "name": "AC-Consulting",
+  "alternateName": "AC Consulting Colombia",
+  "description": "Agencia digital premium en Colombia especializada en desarrollo web, inteligencia artificial y marketing digital. Soluciones tecnológicas de élite para empresas en Latinoamérica.",
+  "url": "https://ac-consulting.net",
+  "logo": "https://ac-consulting.net/assets/logo-ac-consulting.png",
+  "image": "https://ac-consulting.net/assets/og-image.jpg",
+  "email": "hola@ac-consulting.net",
+  "telephone": "+573112241803",
+  "foundingDate": "2018",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": 1
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CO",
+    "addressRegion": "Colombia"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Colombia"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Latinoamérica"
+    }
+  ],
+  "currenciesAccepted": "COP, USD",
+  "priceRange": "$$",
+  "serviceType": [
+    "Diseño Web",
+    "Desarrollo de Software",
+    "Marketing Digital",
+    "SEO",
+    "Inteligencia Artificial",
+    "Automatización",
+    "Consultoría Digital"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios AC-Consulting",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Diseño Web Profesional",
+          "url": "https://ac-consulting.net/servicios/diseno-web.html",
+          "description": "Diseño de interfaces UI/UX, WordPress, Shopify, Webflow. Experiencias digitales que convierten visitantes en clientes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Desarrollo de Software",
+          "url": "https://ac-consulting.net/servicios/desarrollo-software.html",
+          "description": "Desarrollo full-stack con React, Python, Next.js. Código robusto y escalable para startups y empresas."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Marketing Digital y SEO",
+          "url": "https://ac-consulting.net/servicios/marketing-digital.html",
+          "description": "SEO, SEM, redes sociales y estrategias data-driven para aumentar tráfico y conversiones."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Inteligencia Artificial y Automatización",
+          "url": "https://ac-consulting.net/servicios/servicios-ia.html",
+          "description": "Soluciones de IA personalizadas: chatbots, automatización de procesos, integración de LLMs."
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "3",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Carlos Mendoza"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "La implementación de IA redujo nuestros tiempos de atención al cliente en un 70%. Un trabajo excepcional que superó todas nuestras expectativas.",
+      "datePublished": "2025-11-01"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Ana Lucía Vargas"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "El rediseño de nuestra plataforma aumentó las conversiones un 340%. Profesionalismo, creatividad y resultados tangibles desde el día uno.",
+      "datePublished": "2025-09-15"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Roberto Sánchez"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Su expertise en PL/SQL y sistemas legacy nos salvó de un desastre. Migración impecable y soporte continuo de primera.",
+      "datePublished": "2025-07-20"
+    }
+  ],
+  "founder": {
+    "@id": "https://ac-consulting.net/#angel-clavijo"
+  }
+}
+</script>
+
+<!-- 3. SCHEMA: FAQPage (sección FAQ del home) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo toma desarrollar un proyecto web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la complejidad. Una landing page profesional puede estar lista en 1-2 semanas, mientras que una aplicación web completa puede llevar 2-3 meses. Siempre entregamos con cronogramas claros y hitos definidos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajan con empresas de cualquier tamaño?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutamente. Desde startups con presupuestos ajustados hasta corporaciones que necesitan soluciones enterprise. Adaptamos nuestros servicios a las necesidades y escala de cada cliente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecen garantía en sus servicios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Todos nuestros proyectos incluyen garantía de 3 meses post-entrega para corrección de bugs. Además, ofrecemos planes de mantenimiento continuo para actualizaciones y mejoras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se maneja la comunicación durante el proyecto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usamos herramientas colaborativas como Slack, Notion y reuniones semanales de seguimiento. Tendrás acceso a un dashboard en tiempo real para ver el progreso de tu proyecto."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 4. SCHEMA: WebSite con sitelinks searchbox (opcional pero recomendado) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://ac-consulting.net/#website",
+  "url": "https://ac-consulting.net",
+  "name": "AC-Consulting — Desarrollo Web, IA y Marketing Digital en Colombia",
+  "description": "Agencia digital premium en Colombia. Desarrollo web, inteligencia artificial y marketing digital para empresas en Latinoamérica.",
+  "inLanguage": "es-CO",
+  "publisher": {
+    "@id": "https://ac-consulting.net/#organization"
+  }
+}
+</script>
+
+<!-- 5. CANONICAL + LANG (reemplaza o asegúrate de que esté en tu <head>) -->
+<link rel="canonical" href="https://ac-consulting.net/" />
+<!-- Cambia también la etiqueta de apertura del HTML a: <html lang="es-CO"> -->
