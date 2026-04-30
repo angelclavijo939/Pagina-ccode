@@ -7,29 +7,29 @@ AC-Consulting ofrece soluciones tecnológicas de alto rendimiento para empresas 
 
 ## Servicios
 
-- [Diseño Web](https://ac-consulting.net/servicios/diseno-web.html): Diseño UI/UX profesional, WordPress, Webflow y Shopify. Interfaces que cautivan y convierten.
+- [Diseño Web](https://ac-consulting.net/servicios/diseno-web.html): Diseño UI/UX profesional en WordPress, Webflow y Shopify. Interfaces que cautivan y convierten.
 - [Desarrollo de Software](https://ac-consulting.net/servicios/desarrollo-software.html): Soluciones full-stack en Python, JavaScript/TypeScript, React, Next.js, APIs REST y arquitecturas cloud-native.
 - [Servicios de IA](https://ac-consulting.net/servicios/servicios-ia.html): Chatbots con GPT-4 y Claude, automatización de procesos con LLMs, fine-tuning e integraciones de inteligencia artificial.
 - [Marketing Digital](https://ac-consulting.net/servicios/marketing-digital.html): SEO técnico y de contenido, SEM, gestión de redes sociales y campañas data-driven para Colombia y Latinoamérica.
-- [Escritura y Traducción](https://ac-consulting.net/servicios/escritura-traduccion.html): Traducción profesional español-inglés, transcripción y creación de contenido técnico.
-- [Consultoría de Negocios](https://ac-consulting.net/servicios/negocios.html): Business Intelligence, gestión de proyectos ágiles y estrategia digital.
+- [Escritura y Traducción](https://ac-consulting.net/servicios/escritura-traduccion.html): Traducción profesional español-inglés y transcripción.
+- [Consultoría de Negocios](https://ac-consulting.net/servicios/negocios.html): Business Intelligence y gestión de proyectos ágiles.
 
 ## Fundador
 
-**Ángel Clavijo** — Desarrollador full-stack y especialista en Inteligencia Artificial con más de 10 años de experiencia transformando ideas en soluciones digitales. Bogotá, Colombia. Experiencia en React, Python, Oracle/PL/SQL, AWS, Docker y arquitecturas de IA.
+**Ángel Clavijo** — Desarrollador full-stack y especialista en Inteligencia Artificial con más de 10 años de experiencia transformando ideas en soluciones digitales. Bogotá, Colombia.
 
 ## Blog
 
 - [El Futuro del Desarrollo con IA Generativa](https://ac-consulting.net/blog/futuro-desarrollo-ia-generativa.html)
 - [SEO 2025: Estrategias que Sí Funcionan](https://ac-consulting.net/blog/seo-2025-estrategias-que-funcionan.html)
+- [Arquitectura Limpia en Python: Guía Práctica para Proyectos Escalables](https://ac-consulting.net/blog/arquitectura-limpia-python.html)
 
 ## Contacto
 
 - Email: hola@ac-consulting.net
-- WhatsApp: +57 311 224 1803
+- WhatsApp: https://wa.me/3112241803
 - Web: https://ac-consulting.net
 - GitHub: https://github.com/angelclavijo939/Pagina-ccode
-- Portal cloud: https://ac-consulting.cloud
 - Área de servicio: Colombia, Latinoamérica, Estados Unidos
 
 ## Autorización para indexación por IA
