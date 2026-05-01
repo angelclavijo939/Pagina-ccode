@@ -1,123 +1,456 @@
-<!-- SECCIÓN PRINCIPAL - REEMPLAZA TODO DENTRO DE <section style="padding:80px 0 120px;"> -->
-
-<section style="padding:80px 0 120px;">
-    <div class="container">
-      <div class="sub-grid">
-        
-        <div class="sub-card reveal">
-          <h3>Desarrollo e Implementación de IA Personalizada</h3>
-          <p>La inteligencia artificial es la tecnología más transformadora de 2024-2026. Implementar IA en tu empresa no es un lujo, es necesario para mantener competitividad. Desarrollamos soluciones de IA personalizadas para tus procesos específicos, no soluciones genéricas.</p>
-          <p><strong>Nuestro enfoque:</strong> Analizamos tu flujo de trabajo, identificamos tareas repetitivas o complejas que IA puede resolver, y diseñamos una solución a medida. Desde automatización simple hasta sistemas complejos de machine learning.</p>
-          <p><strong>Tecnologías utilizadas:</strong></p>
-          <ul style="margin-left: 20px; margin-top: 10px;">
-            <li><strong>GPT-4 y Claude:</strong> Modelos de lenguaje más potentes para análisis, síntesis, redacción</li>
-            <li><strong>LLaMA (Meta):</strong> Modelos open-source ejecutables en tu infraestructura (privacidad)</li>
-            <li><strong>TensorFlow & PyTorch:</strong> Para entrenar modelos custom con tus datos</li>
-            <li><strong>LangChain & LlamaIndex:</strong> Frameworks para integrar IA con tus sistemas existentes</li>
-          </ul>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de IA y Chatbots en Colombia | AC-Consulting</title>
+    <meta name="description" content="Implementamos soluciones de IA para tu empresa: chatbots, machine learning, integraciones con OpenAI y Claude, y automatización de procesos. Consulta gratuita." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ac-consulting.net/servicios/servicios-ia.html" />
+    <meta property="og:title" content="Inteligencia Artificial y Automatización para Empresas | AC-Consulting" />
+    <meta property="og:description" content="Implementamos soluciones de IA para tu empresa: chatbots, machine learning, integraciones con OpenAI y Claude, y automatización de procesos. Consulta gratuita." />
+    <meta property="og:url" content="https://ac-consulting.net/servicios/servicios-ia.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Inteligencia Artificial y Automatización",
+      "provider": { "@type": "ProfessionalService", "name": "AC-Consulting", "url": "https://ac-consulting.net" },
+      "description": "Desarrollo e implementación de soluciones de inteligencia artificial, chatbots, machine learning y automatización de procesos para empresas en Colombia.",
+      "areaServed": ["Colombia", "Latinoamérica"],
+      "url": "https://ac-consulting.net/servicios/servicios-ia.html",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de IA",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chatbots con GPT-4 y Claude" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fine-tuning de modelos LLM" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas RAG" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización inteligente de procesos" } }
+        ]
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .service-hero {
+            padding: 10rem 0 6rem;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #301030 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.2;
+            filter: blur(100px);
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .subservices-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .subservice-card {
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        .subservice-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        .subservice-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        .subservice-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .subservice-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0 0;
+        }
+        .subservice-list li {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            padding: 4px 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .subservice-list li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 1rem;
+        }
+        .tech-tag {
+            font-size: 0.72rem;
+            font-family: var(--font-mono);
+            padding: 2px 8px;
+            border-radius: 3px;
+            background: rgba(204,85,0,0.12);
+            border: 1px solid rgba(204,85,0,0.3);
+            color: var(--accent);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover { color: var(--accent); }
+        .ai-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .process-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 3rem;
+            margin: 4rem 0;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .process-step { text-align: center; }
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .step-title {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .step-desc {
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+        .faq-section { margin: 4rem 0; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1.2rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: .03em;
+        }
+        .faq-q::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--accent);
+            transition: transform .3s;
+            flex-shrink: 0;
+        }
+        .faq-item.open .faq-q::after { transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+        .faq-item.open .faq-a { max-height: 300px; }
+        .faq-a p {
+            color: var(--text-secondary);
+            padding-bottom: 1.2rem;
+            line-height: 1.75;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 860px) {
+            .service-grid { grid-template-columns: 1fr; }
+            .subservices-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">AC</span>
+                <span class="logo-accent">-CONSULTING</span>
+                <span class="logo-bracket">]</span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">INICIO</a></li>
+                    <li><a href="../index.html#servicios" class="nav-link active">SERVICIOS</a></li>
+                    <li><a href="../index.html#quien-soy" class="nav-link">QUIEN SOY</a></li>
+                    <li><a href="../index.html#blog" class="nav-link">BLOG</a></li>
+                    <li><a href="../index.html#contacto" class="nav-link nav-link-cta">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </button>
         </div>
+    </header>
 
-        <div class="sub-card reveal">
-          <h3>Chatbots Inteligentes con GPT-4 y Claude</h3>
-          <p>Los chatbots dejan de ser "bots tontos con FAQ". Nuestros chatbots usan GPT-4 y Claude para entender contexto, resolver problemas reales y escalar 24/7 sin costo de personal.</p>
-          <p><strong>Casos de uso comunes:</strong></p>
-          <ul style="margin-left: 20px; margin-top: 10px;">
-            <li><strong>Atención al cliente:</strong> Responde preguntas frecuentes, escala a humanos cuando sea necesario</li>
-            <li><strong>Ventas:</strong> Califica leads, responde preguntas de producto, agenda demostraciones</li>
-            <li><strong>Soporte técnico:</strong> Diagnóstico de problemas, tutoriales personalizados, ticket automation</li>
-            <li><strong>Recursos Humanos:</strong> Automatiza respuesta de preguntas sobre beneficios, vacaciones, procesos</li>
-            <li><strong>Legal/Compliance:</strong> Analiza documentos, detecta riesgos, genera reportes</li>
-          </ul>
-          <p><strong>Integración WhatsApp:</strong> Conectamos el chatbot a WhatsApp Business, Facebook Messenger, Telegram e integración en tu sitio web. Usuarios interactúan donde ya están.</p>
-          <p><strong>ROI típico:</strong> Reducción 60-70% de tickets de soporte, +30% conversión en ventas, disponibilidad 24/7 sin costo adicional.</p>
+    <section class="service-hero">
+        <div class="container">
+            <a href="../index.html#servicios" class="back-link">← VOLVER A SERVICIOS</a>
+            <div class="service-grid">
+                <div class="service-content">
+                    <div class="ai-badge">🤖 POWERED BY AI</div>
+                    <span class="section-label">[ SERVICIO ]</span>
+                    <h1 class="section-title">SERVICIOS DE <span class="accent">IA</span></h1>
+                    <p class="about-text">Aprovecha el poder de la Inteligencia Artificial para automatizar procesos, generar insights y crear experiencias personalizadas a escala. Llevamos más de dos años implementando IA para empresas en Colombia y Latinoamérica.</p>
+                    <a href="../index.html#contacto" class="btn btn-primary">
+                        <span>CONSULTORÍA IA</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="service-visual">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop" alt="Servicios de IA Colombia" style="width:100%;border-radius:8px;box-shadow:var(--glow-primary);">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="sub-card reveal">
-          <h3>Fine-Tuning de Modelos (Custom AI)</h3>
-          <p>Los modelos base como GPT-4 son genéricos. Para máxima precisión en tu industria específica, entrenamos ("fine-tuning") modelos con TUS datos históricos. Resulta en respuestas 10-100x más precisas y relevantes.</p>
-          <p><strong>Proceso de fine-tuning:</strong></p>
-          <ul style="margin-left: 20px; margin-top: 10px;">
-            <li>Recopilamos datos históricos (emails, tickets, documentos, casos)</li>
-            <li>Preparamos data en formato compatible (JSONL)</li>
-            <li>Entrenamos modelo usando OpenAI API o en-premises</li>
-            <li>Validamos precisión con test set (20% de datos)</li>
-            <li>Desplegamos y monitoreo en producción</li>
-          </ul>
-          <p><strong>Ejemplo real:</strong> Un despacho legal entrenó Claude con 5 años de casos. Ahora Claude entiende jurisprudencia local, legislación colombiana, precedentes específicos. Genera respuestas 95% precisas (vs 60% con modelo genérico).</p>
-          <p><strong>Costo:</strong> $2,000-$10,000 USD dependiendo de volumen de data y complejidad. ROI se recupera en 2-4 meses típicamente.</p>
+    <section class="services" style="padding-top:4rem;">
+        <div class="container">
+            <span class="section-label">[ INTELIGENCIA ARTIFICIAL ]</span>
+            <h2 class="section-title" style="font-size:2.5rem;">NUESTROS<span class="accent"> SERVICIOS</span></h2>
+
+            <div class="subservices-grid">
+                <div class="subservice-card">
+                    <h3 class="subservice-title">🧠 DESARROLLO DE IA PERSONALIZADA</h3>
+                    <p class="subservice-desc">Implementación de modelos de machine learning, NLP y computer vision adaptados a tu problema específico. Desde clasificadores de texto hasta modelos de predicción de demanda.</p>
+                    <ul class="subservice-list">
+                        <li>Modelos de clasificación y regresión</li>
+                        <li>Procesamiento de lenguaje natural (NLP)</li>
+                        <li>Sistemas de recomendación</li>
+                        <li>Despliegue en AWS, GCP o infraestructura propia</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">FastAPI</span>
+                    </div>
+                </div>
+
+                <div class="subservice-card">
+                    <h3 class="subservice-title">💬 CHATBOTS CON GPT-4 Y CLAUDE</h3>
+                    <p class="subservice-desc">Asistentes virtuales inteligentes que entienden el contexto, acceden a tus datos en tiempo real y escalan automáticamente. No son chatbots de flujo rígido — razonan y responden con precisión.</p>
+                    <ul class="subservice-list">
+                        <li>Atención al cliente 24/7 automatizada</li>
+                        <li>Asistentes de ventas y calificación de leads</li>
+                        <li>Integración con WhatsApp Business API</li>
+                        <li>Conexión con CRM y bases de datos</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tech-tag">GPT-4o</span>
+                        <span class="tech-tag">Claude</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">WhatsApp API</span>
+                    </div>
+                </div>
+
+                <div class="subservice-card">
+                    <h3 class="subservice-title">⚙️ FINE-TUNING DE MODELOS LLM</h3>
+                    <p class="subservice-desc">Ajustamos modelos de lenguaje preentrenados con tus datos corporativos para obtener respuestas más precisas, con el tono de tu marca y alineadas con tu dominio. Ideal para empresas con terminología técnica especializada.</p>
+                    <ul class="subservice-list">
+                        <li>Fine-tuning de GPT-4, LLaMA y Mistral</li>
+                        <li>Preparación y limpieza del dataset</li>
+                        <li>Evaluación y benchmarking del modelo</li>
+                        <li>Despliegue privado en infraestructura segura</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tech-tag">OpenAI Fine-tuning</span>
+                        <span class="tech-tag">LLaMA</span>
+                        <span class="tech-tag">Mistral</span>
+                    </div>
+                </div>
+
+                <div class="subservice-card">
+                    <h3 class="subservice-title">📚 SISTEMAS RAG</h3>
+                    <p class="subservice-desc">Conectamos modelos de IA con tu base de conocimiento interna. El resultado: un asistente que responde preguntas usando tus documentos, manuales y datos reales con fuentes citables.</p>
+                    <ul class="subservice-list">
+                        <li>Indexación de PDFs, Word, Notion, Confluence</li>
+                        <li>Búsqueda semántica con embeddings</li>
+                        <li>Control de acceso por rol de usuario</li>
+                        <li>Actualizaciones automáticas de la base</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tech-tag">LlamaIndex</span>
+                        <span class="tech-tag">Pinecone</span>
+                        <span class="tech-tag">pgvector</span>
+                    </div>
+                </div>
+
+                <div class="subservice-card">
+                    <h3 class="subservice-title">🔗 INTEGRACIONES DE IA</h3>
+                    <p class="subservice-desc">Conectamos modelos de IA con tus sistemas existentes: CRM, ERP, bases de datos y plataformas web. Sin reemplazar lo que ya funciona — potenciándolo con inteligencia artificial.</p>
+                    <ul class="subservice-list">
+                        <li>APIs RESTful documentadas para consumo interno</li>
+                        <li>Automatizaciones con Make y n8n</li>
+                        <li>Integración con Salesforce y HubSpot</li>
+                        <li>Procesamiento automático de documentos</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Make</span>
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="subservice-card">
+                    <h3 class="subservice-title">🤖 AUTOMATIZACIÓN INTELIGENTE</h3>
+                    <p class="subservice-desc">Combinamos IA generativa con automatización de flujos para eliminar tareas repetitivas de alto volumen: clasificación de emails, generación de reportes y extracción de datos de documentos.</p>
+                    <ul class="subservice-list">
+                        <li>Clasificación y enrutamiento de solicitudes</li>
+                        <li>Generación de reportes ejecutivos automáticos</li>
+                        <li>Extracción de datos de facturas (OCR + IA)</li>
+                        <li>Borradores automáticos para revisión humana</li>
+                    </ul>
+                    <div class="tag-row">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenAI</span>
+                        <span class="tech-tag">Make</span>
+                        <span class="tech-tag">Zapier</span>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="sub-card reveal">
-          <h3>Integración IA con Sistemas Existentes</h3>
-          <p>IA no existe en aislamiento. Integramos IA con tus CRM, ERP, base de datos, sistemas de facturación y cualquier herramienta que uses.</p>
-          <p><strong>Integraciones comunes:</strong></p>
-          <ul style="margin-left: 20px; margin-top: 10px;">
-            <li><strong>CRM (Salesforce, HubSpot):</strong> IA analiza oportunidades, predice probabilidad cierre, sugiere próximos pasos</li>
-            <li><strong>ERP (SAP, NetSuite):</strong> Automatiza procesos de compra, análisis de inventario, predicción de demanda</li>
-            <li><strong>Bases de datos:</strong> APIs custom que permiten a IA consultar y actualizar información en tiempo real</li>
-            <li><strong>Email & Calendario:</strong> IA resume emails largos, agenda meetings automáticamente, prioriza inbox</li>
-            <li><strong>Documentos (Google Drive, SharePoint):</strong> IA indexa, busca, extrae información de miles de documentos</li>
-          </ul>
-          <p><strong>Arquitectura:</strong> Usamos LangChain + FastAPI para crear APIs robustas que conectan IA con tus sistemas sin romper seguridad o estructura.</p>
+    <!-- PROCESO -->
+    <section style="padding:2rem 0 4rem;">
+        <div class="container">
+            <div class="process-section">
+                <span class="section-label">[ METODOLOGÍA ]</span>
+                <h2 class="section-title" style="font-size:2rem;">PROCESO DE <span class="accent">IMPLEMENTACIÓN</span></h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-title">DIAGNÓSTICO</div>
+                        <div class="step-desc">Sesión gratuita de 45 min para identificar el caso de uso con mayor ROI en tu operación.</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-title">PROPUESTA</div>
+                        <div class="step-desc">Arquitectura técnica detallada, stack, cronograma y presupuesto antes de comenzar.</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-title">DESARROLLO</div>
+                        <div class="step-desc">Sprints de 2 semanas con demos funcionales. Feedback continuo para ajustar el rumbo.</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-title">DESPLIEGUE</div>
+                        <div class="step-desc">Lanzamiento en producción con documentación completa y capacitación del equipo.</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <div class="step-title">SOPORTE</div>
+                        <div class="step-desc">Monitoreo del rendimiento, ajustes del modelo y soporte técnico post-lanzamiento.</div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="sub-card reveal">
-          <h3>Análisis de Datos y Predictive Analytics</h3>
-          <p>IA no es solo texto. Aplicamos machine learning a tus datos históricos para predecir tendencias, detectar anomalías y tomar decisiones mejor informadas.</p>
-          <p><strong>Casos de uso:</strong></p>
-          <ul style="margin-left: 20px; margin-top: 10px;">
-            <li><strong>Churn prediction:</strong> Identifica clientes en riesgo ANTES de que se vayan. Intervén a tiempo</li>
-            <li><strong>Demand forecasting:</strong> Predice ventas futuras (producto X venderá 1000 unidades en Q2)</li>
-            <li><strong>Fraud detection:</strong> Detecta transacciones fraudulentas en tiempo real</li>
-            <li><strong>Anomaly detection:</strong> Alertas automáticas cuando algo inusual ocurre en tus datos</li>
-            <li><strong>Customer segmentation:</strong> Agrupa clientes en clusters, personaliza estrategia para cada segmento</li>
-          </ul>
-          <p><strong>Herramientas:</strong> TensorFlow, Scikit-learn, XGBoost. Entrenamos modelos, los desplegamos en dashboards interactivos (Power BI, Metabase, Tableau).</p>
+    <!-- FAQ -->
+    <section style="padding:0 0 6rem;">
+        <div class="container" style="max-width:800px;">
+            <span class="section-label">[ PREGUNTAS FRECUENTES ]</span>
+            <h2 class="section-title" style="font-size:2rem;">FAQ <span class="accent">IA</span></h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <button class="faq-q">¿CUÁNTO CUESTA IMPLEMENTAR UN CHATBOT CON IA?</button>
+                    <div class="faq-a"><p>Depende de la complejidad: un chatbot básico puede estar listo desde $800 USD. Un asistente con acceso a base de datos, integración con CRM y múltiples canales está en el rango de $2.000–$6.000 USD. Hacemos diagnósticos gratuitos para darte una estimación precisa.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">¿MIS DATOS ESTÁN SEGUROS AL USAR GPT-4 O CLAUDE?</button>
+                    <div class="faq-a"><p>Para datos sensibles, implementamos modelos open-source (LLaMA, Mistral) en tu propia infraestructura sin que ningún dato salga de tus servidores. Para datos no sensibles, OpenAI y Anthropic ofrecen Business API con acuerdos de confidencialidad que excluyen el uso de tus datos para entrenar modelos.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">¿CUÁNTO TIEMPO TARDA UNA IMPLEMENTACIÓN DE IA?</button>
+                    <div class="faq-a"><p>Un chatbot funcional puede estar listo en 2–3 semanas. Un sistema RAG completo toma 4–8 semanas. Proyectos de fine-tuning pueden tomar 6–12 semanas dependiendo del volumen de datos y la complejidad del caso de uso.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">¿NECESITO UN EQUIPO TÉCNICO INTERNO?</button>
+                    <div class="faq-a"><p>No. Ofrecemos planes de mantenimiento mensual que incluyen monitoreo, actualizaciones del modelo y soporte técnico. Si tu equipo prefiere gestionar la solución, entregamos documentación completa y capacitación incluida en todos los proyectos.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">¿QUÉ PASA SI EL MODELO COMETE ERRORES?</button>
+                    <div class="faq-a"><p>Todo sistema incluye un mecanismo de escalamiento a humanos para casos de alta importancia. Monitoreamos el rendimiento en producción y realizamos ajustes periódicos. El objetivo es reducir errores continuamente, no eliminarlos desde el día uno.</p></div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:3rem;">
+                <a href="../index.html#contacto" class="btn btn-primary">
+                    <span>DIAGNÓSTICO GRATUITO</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="sub-card reveal">
-          <h3>Consultoría y Estrategia IA para tu Negocio</h3>
-          <p>¿No sabes por dónde empezar con IA? Ofrecemos sesiones de consultoría donde mapeamos oportunidades específicas en tu empresa.</p>
-          <p><strong>Entregables típicos:</strong></p>
-          <ul style="margin-left: 20px; margin-top: 10px;">
-            <li>Auditoria de procesos: dónde IA añade valor</li>
-            <li>Roadmap de 12 meses: qué implementar, en qué orden</li>
-            <li>ROI proyectado: cuánto ahorro/ingreso genera cada implementación</li>
-            <li>Riesgos y mitigación: cómo manejar privacidad, sesgo, compliance</li>
-            <li>Plan de capacitación: cómo tu equipo aprende a usar IA</li>
-          </ul>
-          <p><strong>Inversión:</strong> $5,000-$15,000 USD para auditoría completa. Typicamente se recupera con la primera implementación (3-6 meses).</p>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p>&copy; 2026 AC-Consulting. Todos los derechos reservados.</p>
+                </div>
+            </div>
         </div>
+    </footer>
 
-      </div>
-
-      <div style="margin-top:60px;padding:40px;background:var(--card-bg);border:1px solid rgba(204,85,0,0.3);border-radius:var(--radius-lg);">
-        <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--white);margin-bottom:16px;">Casos de Éxito - IA en Acción</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:24px;">
-          <div style="padding:20px;background:rgba(204,85,0,0.15);border-radius:8px;">
-            <strong style="color:var(--accent);display:block;margin-bottom:8px;">📧 FinTech Solutions</strong>
-            <p style="color:var(--text-muted);font-size:0.9rem;">Chatbot IA redujo 40,000 emails/mes a 12,000. Ahorro: 15 personas equivalentes. ROI 8:1 en año 1.</p>
-          </div>
-          <div style="padding:20px;background:rgba(204,85,0,0.15);border-radius:8px;">
-            <strong style="color:var(--accent);display:block;margin-bottom:8px;">🏪 Retail Group</strong>
-            <p style="color:var(--text-muted);font-size:0.9rem;">Predicción de demanda IA mejoró precisión 92%. Inventario 35% menor, cero stockouts.</p>
-          </div>
-          <div style="padding:20px;background:rgba(204,85,0,0.15);border-radius:8px;">
-            <strong style="color:var(--accent);display:block;margin-bottom:8px;">🎓 EduTech CO</strong>
-            <p style="color:var(--text-muted);font-size:0.9rem;">Fine-tuning IA con curriculum local. Tutor 24/7 personalizado. +45% completación de cursos.</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:40px;padding:30px;background:rgba(204,85,0,0.1);border-radius:var(--radius-lg);border-left:4px solid var(--accent);">
-        <h4 style="color:var(--white);margin-bottom:15px;">❓ Preguntas Frecuentes sobre IA</h4>
-        <p style="color:var(--text-muted);margin-bottom:15px;"><strong>¿Es caro implementar IA?</strong> Depende del caso. Un chatbot simple cuesta $3-5K. Fine-tuning custom $5-15K. Análisis de datos predictivos $8-20K. Pero ROI típico se recupera en 3-6 meses.</p>
-        <p style="color:var(--text-muted);margin-bottom:15px;"><strong>¿Qué tan privado es mi data?</strong> Muy importante: nunca enviamos datos sensibles a APIs públicas. Ofrecemos modelos on-premises (LLaMA, Mistral) ejecutándose en tu infraestructura. Control total.</p>
-        <p style="color:var(--text-muted);"><strong>¿Reemplaza IA a mis empleados?</strong> No. IA automatiza tareas repetitivas, libera tiempo para trabajo estratégico. Tu equipo se enfoca en decisiones, creatividad, relaciones. IA es herramienta, no reemplazo.</p>
-      </div>
-
-      <div style="text-align:center;margin-top:60px;">
-        <a href="../contacto.html" class="btn btn-primary">Solicitar Consulta IA Gratuita</a>
-      </div>
-    </div>
-  </section>
+    <script src="../scripts.js"></script>
+</body>
+</html>
