@@ -1,121 +1,412 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto — Solicita tu Cotización | AC-Consulting Colombia</title>
-  <meta name="description" content="Contáctanos para desarrollar tu proyecto web, implementar IA o crear tu estrategia de marketing digital. Respondemos en menos de 24 horas. AC-Consulting Colombia." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://ac-consulting.net/contacto.html" />
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | AC-Consulting — Desarrollo Web e IA en Colombia</title>
+  <meta name="description" content="Contacta a AC-Consulting para cotizar tu proyecto de desarrollo web, inteligencia artificial o marketing digital. Respuesta en menos de 24 horas. Bogotá, Colombia.">
+  <link rel="canonical" href="https://ac-consulting.net/contacto.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Schema: ContactPage + LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto — AC-Consulting",
+    "url": "https://ac-consulting.net/contacto.html",
+    "description": "Página de contacto de AC-Consulting. Solicita una cotización para tu proyecto de desarrollo web, IA o marketing digital.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://ac-consulting.net/"},
+        {"@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://ac-consulting.net/contacto.html"}
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://ac-consulting.net/#organization",
+    "name": "AC-Consulting",
+    "url": "https://ac-consulting.net",
+    "email": "hola@ac-consulting.net",
+    "telephone": "+57-311-224-1803",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bogotá",
+      "addressRegion": "Cundinamarca",
+      "addressCountry": "CO"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "areaServed": [
+      {"@type": "Country", "name": "Colombia"},
+      {"@type": "AdministrativeArea", "name": "Latinoamérica"}
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+57-311-224-1803",
+      "email": "hola@ac-consulting.net",
+      "contactType": "customer service",
+      "availableLanguage": ["Spanish", "English"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    .contact-hero {
+      background: #0a0a0a;
+      padding: 120px 24px 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .contact-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .contact-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #7cfc00;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .contact-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 7vw, 80px);
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .contact-hero p {
+      font-family: 'Space Grotesk', sans-serif;
+      color: rgba(255,255,255,0.5);
+      font-size: 15px;
+      max-width: 520px;
+    }
+    .contact-body {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: start;
+    }
+    /* Info column */
+    .contact-info { }
+    .contact-info h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.05em;
+      margin-bottom: 28px;
+      color: #0a0a0a;
+    }
+    .nap-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .nap-item:last-of-type { border-bottom: none; }
+    .nap-icon {
+      width: 42px; height: 42px;
+      background: #0a0a0a;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .nap-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .nap-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #0a0a0a;
+    }
+    .nap-value a {
+      color: #0a0a0a;
+      text-decoration: none;
+    }
+    .nap-value a:hover { color: #7cfc00; }
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .hours-row {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #555;
+    }
+    /* Form column */
+    .contact-form-wrap { }
+    .contact-form-wrap h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.05em;
+      margin-bottom: 28px;
+      color: #0a0a0a;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #555;
+      margin-bottom: 7px;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: #f7f7f5;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      color: #0a0a0a;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: #0a0a0a;
+      background: #fff;
+    }
+    .form-textarea { resize: vertical; min-height: 130px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      width: 100%;
+      background: #0a0a0a;
+      color: #7cfc00;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      padding: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: #222; }
+    .form-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #aaa;
+      text-align: center;
+      margin-top: 12px;
+    }
+    /* Response time badge */
+    .response-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0fff0;
+      border: 1px solid #b3f0b3;
+      border-radius: 4px;
+      padding: 8px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #1a7a3a;
+      margin-bottom: 28px;
+    }
+    .response-dot { width: 7px; height: 7px; background: #22c97a; border-radius: 50%; animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    @media (max-width: 720px) {
+      .contact-body { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <header class="header scrolled" id="header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">A</span><span class="logo-text">C-Consulting</span>
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="/" class="logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">AC</span>
+        <span class="logo-accent">-CONSULTING</span>
+        <span class="logo-bracket">]</span>
       </a>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-      <nav class="nav" id="nav">
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="contacto.html" class="nav-link active">Servicios</a>
-        <a href="index.html#quien-soy" class="nav-link">Quién soy</a>
-        <a href="index.html#blog" class="nav-link">Blog</a>
-        <a href="contacto.html" class="nav-link nav-cta">Contacto</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="/#inicio" class="nav-link">INICIO</a></li>
+          <li><a href="/#servicios" class="nav-link">SERVICIOS</a></li>
+          <li><a href="/#quien-soy" class="nav-link">QUIEN SOY</a></li>
+          <li><a href="/#blog" class="nav-link">BLOG</a></li>
+          <li><a href="/contacto.html" class="nav-link nav-link-cta">CONTACTO</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <p class="section-label">Hablemos</p>
-      <h1 class="section-title">¿Tienes un <em>proyecto</em>?</h1>
-      <p style="color:var(--text-muted);max-width:520px;margin:0 auto 48px;">
-        Cuéntanos tu idea y te respondemos en menos de 24 horas con una propuesta personalizada.
-      </p>
+  <div class="contact-hero">
+    <div class="contact-hero-inner">
+      <span class="contact-tag">// Hablemos</span>
+      <h1>Iniciemos<br>Tu Proyecto</h1>
+      <p>Cuéntanos tu idea. Respondemos en menos de 24 horas con una propuesta inicial sin costo.</p>
     </div>
-  </section>
+  </div>
 
-  <section style="padding:0 0 120px;">
-    <div class="container">
-      <div class="contact-form-wrap">
-        <form id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nombres">Nombres *</label>
-              <input type="text" id="nombres" name="nombres" placeholder="JUAN" required autocomplete="given-name" />
-            </div>
-            <div class="form-group">
-              <label for="apellidos">Apellidos *</label>
-              <input type="text" id="apellidos" name="apellidos" placeholder="PÉREZ" required autocomplete="family-name" />
-            </div>
+  <div class="contact-body">
+
+    <!-- Columna izquierda: NAP + info -->
+    <div class="contact-info">
+      <h2>Información de Contacto</h2>
+
+      <div class="response-badge">
+        <span class="response-dot"></span>
+        Respuesta en menos de 24 hrs
+      </div>
+
+      <div class="nap-item">
+        <div class="nap-icon">✉️</div>
+        <div>
+          <div class="nap-label">Email</div>
+          <div class="nap-value"><a href="mailto:hola@ac-consulting.net">hola@ac-consulting.net</a></div>
+        </div>
+      </div>
+
+      <div class="nap-item">
+        <div class="nap-icon">📱</div>
+        <div>
+          <div class="nap-label">WhatsApp</div>
+          <div class="nap-value"><a href="https://wa.me/3112241803" target="_blank" rel="noopener">+57 311 224 1803</a></div>
+        </div>
+      </div>
+
+      <div class="nap-item">
+        <div class="nap-icon">📍</div>
+        <div>
+          <div class="nap-label">Ubicación</div>
+          <div class="nap-value">Bogotá, D.C., Colombia<br>
+            <span style="font-size:13px;color:#888;">Atención remota · Colombia y LATAM</span>
           </div>
-          <div class="form-group">
-            <label for="correo">Correo electrónico *</label>
-            <input type="email" id="correo" name="correo" placeholder="tu@email.com" required autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="nap-item">
+        <div class="nap-icon">🕐</div>
+        <div>
+          <div class="nap-label">Horario de Atención</div>
+          <div class="hours-grid">
+            <span class="hours-row">Lun – Vie</span><span class="hours-row">9:00 – 18:00 (COT)</span>
+            <span class="hours-row">Sáb – Dom</span><span class="hours-row">Cerrado</span>
           </div>
-          <div class="form-group">
-            <label for="telefono">Teléfono *</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="+57 300 0000000" required autocomplete="tel" />
-          </div>
-          <div class="form-group">
-            <label for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
-            Enviar mensaje
-          </button>
-          <div id="formMsg" class="form-msg"></div>
-        </form>
+        </div>
+      </div>
+
+      <div class="nap-item">
+        <div class="nap-icon">🌐</div>
+        <div>
+          <div class="nap-label">Áreas de Servicio</div>
+          <div class="nap-value">Colombia · Latinoamérica · Estados Unidos</div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo"><span class="logo-mark">A</span><span class="logo-text">C-Consulting</span></a>
-          <p>Transformamos ideas en soluciones digitales que generan resultados reales.</p>
-          <div class="footer-social">
-            <a href="#">in</a><a href="#">𝕏</a><a href="#">⊕</a><a href="#">⌥</a>
+    <!-- Columna derecha: formulario -->
+    <div class="contact-form-wrap">
+      <h2>Cotiza Tu Proyecto</h2>
+
+      <!-- El action debe apuntarse al backend de tu formulario (Formspree, EmailJS, etc.) -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="nombre">Nombre *</label>
+            <input class="form-input" type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="empresa">Empresa</label>
+            <input class="form-input" type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa">
           </div>
         </div>
-        <div class="footer-links">
-          <h4>Enlaces rápidos</h4>
-          <a href="#">Políticas de privacidad</a>
-          <a href="index.html#blog">Blog</a>
-          <a href="#">Soporte técnico</a>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="email">Email *</label>
+            <input class="form-input" type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="telefono">Teléfono</label>
+            <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000">
+          </div>
         </div>
-        <div class="footer-links">
-          <h4>Servicios</h4>
-          <a href="servicios/diseno-web.html">Diseño Web</a>
-          <a href="servicios/desarrollo-software.html">Desarrollo</a>
-          <a href="servicios/servicios-ia.html">Inteligencia Artificial</a>
-          <a href="servicios/marketing-digital.html">Marketing Digital</a>
+
+        <div class="form-group">
+          <label class="form-label" for="servicio">Servicio de Interés *</label>
+          <select class="form-select" id="servicio" name="servicio" required>
+            <option value="">Selecciona un servicio...</option>
+            <option value="diseno-web">Diseño Web Profesional</option>
+            <option value="desarrollo-software">Desarrollo de Software</option>
+            <option value="ia-automatizacion">IA y Automatización</option>
+            <option value="marketing-digital">Marketing Digital / SEO</option>
+            <option value="escritura-traduccion">Escritura y Traducción</option>
+            <option value="consultoria">Consultoría de Negocios</option>
+            <option value="otro">Otro / No sé aún</option>
+          </select>
         </div>
-        <div class="footer-newsletter">
-          <h4>Newsletter</h4>
-          <p>Recibe artículos y novedades en tecnología e IA.</p>
-          <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-            <input type="email" placeholder="tu@email.com" required />
-            <button type="submit" class="btn btn-primary">Suscribir</button>
-          </form>
+
+        <div class="form-group">
+          <label class="form-label" for="presupuesto">Presupuesto Aproximado</label>
+          <select class="form-select" id="presupuesto" name="presupuesto">
+            <option value="">Selecciona un rango...</option>
+            <option value="500-1000">USD $500 – $1,000</option>
+            <option value="1000-3000">USD $1,000 – $3,000</option>
+            <option value="3000-5000">USD $3,000 – $5,000</option>
+            <option value="5000+">USD $5,000+</option>
+            <option value="por-definir">Por definir</option>
+          </select>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 AC-Consulting. Todos los derechos reservados.</p>
-        <p>Contacto legal: <a href="mailto:hola@ac-consulting.net">hola@ac-consulting.net</a></p>
-      </div>
+
+        <div class="form-group">
+          <label class="form-label" for="mensaje">Cuéntame tu proyecto *</label>
+          <textarea class="form-textarea" id="mensaje" name="mensaje" required placeholder="Describe brevemente tu proyecto, objetivos y cualquier detalle relevante..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">ENVIAR SOLICITUD →</button>
+        <div class="form-note">* Campos requeridos · Sin spam · Respuesta en &lt; 24 hrs</div>
+      </form>
+    </div>
+
+  </div>
+
+  <footer style="background:#0a0a0a;padding:32px 24px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);">
+    <div style="margin-bottom:10px;">
+      <span style="color:#fff;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.1em;">[AC-CONSULTING]</span>
+    </div>
+    <div>© 2026 AC-Consulting · Bogotá, Colombia ·
+      <a href="/privacidad.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">Privacidad</a> ·
+      <a href="/terminos.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">Términos</a>
     </div>
   </footer>
 
-  <a class="wa-float" id="waFloat" href="#" target="_blank" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-
-  <script src="scripts.js"></script>
 </body>
 </html>
