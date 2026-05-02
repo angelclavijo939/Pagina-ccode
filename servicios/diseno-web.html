@@ -1,34 +1,113 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseño Web Profesional en Colombia | AC-Consulting</title>
     <meta name="description" content="Servicio de diseño web UI/UX en Colombia. Creamos sitios modernos, rápidos y optimizados para convertir. WordPress, Webflow y desarrollo a medida. Cotiza gratis." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ac-consulting.net/servicios/diseno-web.html" />
+    <!-- Canonical sin extensión .html para evitar duplicados -->
+    <link rel="canonical" href="https://ac-consulting.net/servicios/diseno-web" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es-CO" href="https://ac-consulting.net/servicios/diseno-web" />
+    <link rel="alternate" hreflang="es" href="https://ac-consulting.net/servicios/diseno-web" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Diseño Web Profesional en Colombia | AC-Consulting" />
     <meta property="og:description" content="Servicio de diseño web UI/UX en Colombia. Creamos sitios modernos, rápidos y optimizados para convertir. WordPress, Webflow y desarrollo a medida. Cotiza gratis." />
-    <meta property="og:url" content="https://ac-consulting.net/servicios/diseno-web.html" />
+    <meta property="og:url" content="https://ac-consulting.net/servicios/diseno-web" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="AC-Consulting" />
+    <!-- TODO: crear imagen 1200x630 y subir a /assets/og-diseno-web.jpg -->
+    <meta property="og:image" content="https://ac-consulting.net/assets/og-diseno-web.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Diseño Web Profesional en Colombia — AC-Consulting" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Diseño Web Profesional en Colombia | AC-Consulting" />
+    <meta name="twitter:description" content="Sitios web modernos, rápidos y optimizados para convertir. WordPress, Webflow y desarrollo a medida." />
+    <meta name="twitter:image" content="https://ac-consulting.net/assets/og-diseno-web.jpg" />
+
+    <!-- Schema.org: Service -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Diseño Web",
-      "provider": { "@type": "ProfessionalService", "name": "AC-Consulting", "url": "https://ac-consulting.net" },
-      "description": "Servicio de diseño web profesional UI/UX, landing pages, WordPress, Webflow y plataformas a medida en Colombia.",
-      "areaServed": ["Colombia", "Latinoamérica"],
-      "url": "https://ac-consulting.net/servicios/diseno-web.html",
+      "name": "Diseño Web Profesional",
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://ac-consulting.net/#organization",
+        "name": "AC-Consulting",
+        "url": "https://ac-consulting.net"
+      },
+      "description": "Servicio de diseño web profesional UI/UX, landing pages, WordPress, Webflow y plataformas a medida en Colombia. Entrega en 2–4 semanas desde $800 USD.",
+      "areaServed": [
+        { "@type": "Country", "name": "Colombia" },
+        { "@type": "AdministrativeArea", "name": "Latinoamérica" }
+      ],
+      "url": "https://ac-consulting.net/servicios/diseno-web",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "800",
+        "highPrice": "8000",
+        "priceCurrency": "USD"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios de Diseño Web",
         "itemListElement": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web en WordPress y Webflow" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño UI/UX profesional" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño UI/UX profesional" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce con Shopify o WooCommerce" } }
         ]
       }
+    }
+    </script>
+
+    <!-- Schema.org: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta un sitio web profesional en Colombia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de la complejidad y la plataforma. Un sitio en WordPress o Webflow con 5–8 páginas está en el rango de $800–$2.500 USD. Un e-commerce o proyecto con funcionalidades avanzadas puede estar entre $2.500–$8.000 USD. Contáctanos con los detalles de tu proyecto para una cotización precisa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo gestionar el sitio web yo mismo después de la entrega?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Todos los proyectos en WordPress, Webflow o Shopify incluyen capacitación para que tu equipo pueda actualizar contenido, agregar páginas y gestionar el blog sin necesidad de conocimientos técnicos. También entregamos documentación del sitio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El servicio de diseño web incluye hosting y dominio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El hosting y dominio no están incluidos por defecto, pero te asesoramos en la selección del proveedor más adecuado según tu presupuesto y necesidades. Para proyectos en Vercel o Netlify el hosting puede ser gratuito o muy económico."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuántas revisiones de diseño están incluidas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En la fase de diseño en Figma, incluimos revisiones ilimitadas hasta que el prototipo sea aprobado. Una vez iniciado el desarrollo, incluimos 2 rondas de ajustes. Cambios adicionales al alcance acordado se cotizan por separado."
+          }
+        }
+      ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -243,6 +322,16 @@
                     <span>COTIZAR PROYECTO</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
+            </div>
+
+            <!-- Interlinking hacia otros servicios relacionados -->
+            <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);">
+                <p style="color:var(--text-secondary);font-size:0.85rem;font-family:var(--font-mono,monospace);margin-bottom:1rem;">[ SERVICIOS RELACIONADOS ]</p>
+                <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                    <a href="../servicios/desarrollo-software.html" style="color:var(--accent);text-decoration:none;font-size:0.9rem;border:1px solid rgba(204,85,0,0.3);padding:0.4rem 1rem;border-radius:4px;">→ Desarrollo de Software</a>
+                    <a href="../servicios/marketing-digital.html" style="color:var(--accent);text-decoration:none;font-size:0.9rem;border:1px solid rgba(204,85,0,0.3);padding:0.4rem 1rem;border-radius:4px;">→ Marketing Digital &amp; SEO</a>
+                    <a href="../servicios/servicios-ia.html" style="color:var(--accent);text-decoration:none;font-size:0.9rem;border:1px solid rgba(204,85,0,0.3);padding:0.4rem 1rem;border-radius:4px;">→ Inteligencia Artificial</a>
+                </div>
             </div>
         </div>
     </section>
