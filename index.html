@@ -195,7 +195,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Preload hero image para reducir LCP (~3.8s → <2.5s) -->
+    <link rel="preload" as="fetch" href="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1920&auto=format&fit=crop" crossorigin>
+
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* prefers-reduced-motion: detiene el marquee en dispositivos sensibles */
+        @media (prefers-reduced-motion: reduce) {
+            .tech-track, .tech-track * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -227,7 +241,7 @@
     <!-- Hero Section - Full Height -->
     <section class="hero" id="inicio">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1920&auto=format&fit=crop" alt="Background" class="hero-img">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1920&auto=format&fit=crop" alt="Equipo de desarrollo web e inteligencia artificial trabajando en Colombia" class="hero-img" width="1920" height="1080" fetchpriority="high">
             <div class="hero-overlay"></div>
             <div class="hero-grid"></div>
         </div>
@@ -245,6 +259,9 @@
                 <p class="hero-description">
                     Soluciones tecnológicas de élite que impulsan tu negocio al siguiente nivel.
                     Desarrollo, IA y marketing digital sin límites.
+                </p>
+                <p class="hero-subdesc" style="font-size:0.85rem;color:rgba(255,255,255,0.55);margin-top:-1rem;margin-bottom:1.5rem;font-family:var(--font-mono,monospace);letter-spacing:0.04em;">
+                    Agencia digital en Colombia — Desarrollo Web · Inteligencia Artificial · Marketing Digital
                 </p>
                 <div class="hero-actions">
                     <a href="#contacto" class="btn btn-primary">
@@ -388,7 +405,7 @@
             <div class="about-grid">
                 <div class="about-visual">
                     <div class="about-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop" alt="Professional workspace" class="about-image">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop" alt="Ángel Clavijo — Desarrollador Full-Stack y especialista en IA en Colombia" class="about-image" width="800" height="600" loading="lazy">
                         <div class="about-frame"></div>
                         <div class="about-stats">
                             <div class="stat-item">
@@ -434,6 +451,9 @@
                 <span class="section-label">[ TESTIMONIOS ]</span>
                 <h2 class="section-title">CLIENTES QUE <span class="accent">CONFÍAN</span></h2>
             </div>
+            <!-- NOTA: Las fotos de stock de Unsplash dañan E-E-A-T.
+                 Reemplaza los avatares SVG con fotos reales de los clientes (con permiso)
+                 o capturas de sus reseñas de Google / LinkedIn cuando las tengas. -->
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-quote">"</div>
@@ -442,7 +462,10 @@
                         Un trabajo excepcional que superó todas nuestras expectativas.
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Cliente" class="author-avatar">
+                        <svg class="author-avatar" width="48" height="48" viewBox="0 0 48 48" aria-label="Carlos Mendoza" role="img">
+                            <circle cx="24" cy="24" r="24" fill="#cc5500"/>
+                            <text x="24" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#fff">CM</text>
+                        </svg>
                         <div class="author-info">
                             <span class="author-name">Carlos Mendoza</span>
                             <span class="author-role">CEO, TechStart México</span>
@@ -456,7 +479,10 @@
                         Profesionalismo, creatividad y resultados tangibles desde el día uno.
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Cliente" class="author-avatar">
+                        <svg class="author-avatar" width="48" height="48" viewBox="0 0 48 48" aria-label="Ana Lucía Vargas" role="img">
+                            <circle cx="24" cy="24" r="24" fill="#cc5500"/>
+                            <text x="24" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#fff">AL</text>
+                        </svg>
                         <div class="author-info">
                             <span class="author-name">Ana Lucía Vargas</span>
                             <span class="author-role">Directora de Marketing, InnovaCorp</span>
@@ -470,7 +496,10 @@
                         Migración impecable y soporte continuo de primera.
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop" alt="Cliente" class="author-avatar">
+                        <svg class="author-avatar" width="48" height="48" viewBox="0 0 48 48" aria-label="Roberto Sánchez" role="img">
+                            <circle cx="24" cy="24" r="24" fill="#cc5500"/>
+                            <text x="24" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#fff">RS</text>
+                        </svg>
                         <div class="author-info">
                             <span class="author-name">Roberto Sánchez</span>
                             <span class="author-role">CTO, Financiera del Norte</span>
@@ -523,7 +552,7 @@
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop" alt="AI" class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop" alt="Inteligencia artificial generativa aplicada al desarrollo de software" class="blog-image" width="600" height="400" loading="lazy">
                         <span class="blog-category">IA</span>
                     </div>
                     <div class="blog-content">
@@ -538,7 +567,7 @@
                 </article>
                 <article class="blog-card">
                     <div class="blog-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Marketing" class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Estrategias de SEO y marketing digital para empresas en Colombia 2025" class="blog-image" width="600" height="400" loading="lazy">
                         <span class="blog-category">MARKETING</span>
                     </div>
                     <div class="blog-content">
@@ -553,7 +582,7 @@
                 </article>
                 <article class="blog-card">
                     <div class="blog-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" alt="Code" class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" alt="Arquitectura limpia y patrones de diseño en Python para aplicaciones escalables" class="blog-image" width="600" height="400" loading="lazy">
                         <span class="blog-category">DESARROLLO</span>
                     </div>
                     <div class="blog-content">
