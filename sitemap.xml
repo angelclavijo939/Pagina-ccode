@@ -11,7 +11,7 @@
 
   <!-- Contacto -->
   <url>
-    <loc>https://ac-consulting.net/contacto</loc>
+    <loc>https://ac-consulting.net/contacto.html</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
@@ -55,21 +55,21 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog — actualiza lastmod cuando publiques nuevos artículos -->
+  <!-- Blog — con extensión .html -->
   <url>
-    <loc>https://ac-consulting.net/blog/futuro-desarrollo-ia-generativa</loc>
+    <loc>https://ac-consulting.net/blog/futuro-desarrollo-ia-generativa.html</loc>
     <lastmod>2026-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ac-consulting.net/blog/seo-2025-estrategias-que-funcionan</loc>
+    <loc>https://ac-consulting.net/blog/seo-2025-estrategias-que-funcionan.html</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ac-consulting.net/blog/arquitectura-limpia-python</loc>
+    <loc>https://ac-consulting.net/blog/arquitectura-limpia-python.html</loc>
     <lastmod>2025-12-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
